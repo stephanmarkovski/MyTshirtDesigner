@@ -8,7 +8,8 @@
 import UIKit
 
 class designViewController: UIViewController {
-
+    @IBOutlet weak var myTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

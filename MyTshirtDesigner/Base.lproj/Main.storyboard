@@ -66,18 +66,21 @@
                     </view>
                     <navigationItem key="navigationItem" id="Xgm-7G-Gog">
                         <nil key="title"/>
-                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="XIb-xz-zcT">
-                            <rect key="frame" x="394" y="5" width="32" height="34"/>
+                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="XIb-xz-zcT">
+                            <rect key="frame" x="338.5" y="8" width="143" height="34"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <barButtonItem key="rightBarButtonItem" title="Item" id="4St-V7-IQg"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="myTextField" destination="XIb-xz-zcT" id="WZC-Vt-UqG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gTo-QM-jWE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1582.608695652174" y="67.633928571428569"/>
+            <point key="canvasLocation" x="1581.9512195121952" y="67.627118644067806"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="FiY-bY-BFH">
