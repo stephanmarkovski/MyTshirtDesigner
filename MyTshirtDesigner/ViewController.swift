@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  MyTshirtDesigner
 //
-//  Created by stephan markovski on 1/25/22.
+//  Created by Stephan Markovski, Vincent Diliberto, Aiden Overton on 1/25/22.
 //
 
 import UIKit
