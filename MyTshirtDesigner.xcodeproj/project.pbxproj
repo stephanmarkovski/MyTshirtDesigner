@@ -58,11 +58,11 @@
 			children = (
 				F856D2CD27A05BAB00931576 /* AppDelegate.swift */,
 				F856D2CF27A05BAB00931576 /* SceneDelegate.swift */,
+				F856D2DB27A05BAC00931576 /* Info.plist */,
 				F856D2D127A05BAB00931576 /* ViewController.swift */,
 				F856D2D327A05BAB00931576 /* Main.storyboard */,
 				F856D2D627A05BAC00931576 /* Assets.xcassets */,
 				F856D2D827A05BAC00931576 /* LaunchScreen.storyboard */,
-				F856D2DB27A05BAC00931576 /* Info.plist */,
 			);
 			path = MyTshirtDesigner;
 			sourceTree = "<group>";
