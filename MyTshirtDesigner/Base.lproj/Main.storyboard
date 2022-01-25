@@ -72,7 +72,11 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="4St-V7-IQg"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="4St-V7-IQg">
+                            <connections>
+                                <action selector="editbutton:" destination="IoV-xp-8en" id="yoY-op-h0I"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="myTextField" destination="XIb-xz-zcT" id="WZC-Vt-UqG"/>
