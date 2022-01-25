@@ -1,25 +1,21 @@
 //
-//  designViewController.swift
+//  SavedTshirts.swift
 //  MyTshirtDesigner
 //
-//  Created by Vincent Diliberto on 1/25/22.
+//  Created by Aiden Overton on 1/25/22.
 //
 
 import UIKit
 
-class designViewController: UIViewController {
-    @IBOutlet weak var myTextField: UITextField!
-    
+class SavedTshirts: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        var tshirtTitle = myTextField.text!
+
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func myFontButton(_ sender: Any) {
-        
-    }
-    
+
     /*
     // MARK: - Navigation
 
