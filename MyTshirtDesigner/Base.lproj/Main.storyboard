@@ -51,10 +51,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4kf-dI-irg">
-                                <rect key="frame" x="85" y="195" width="650" height="636"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vqa-2S-I2S">
                                 <rect key="frame" x="662" y="65" width="125" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -74,6 +70,16 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="33"/>
                                 </buttonConfiguration>
                             </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QdY-Yp-yn1">
+                                <rect key="frame" x="174" y="888" width="473" height="190"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Nis-1d-xMb"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="L4S-od-1yg"/>
+                            </scrollView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4kf-dI-irg">
+                                <rect key="frame" x="63" y="147" width="650" height="636"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="x0I-SA-BkS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -93,6 +99,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="imagedesign" destination="4kf-dI-irg" id="Xh1-km-jUz"/>
                         <outlet property="myTextField" destination="XIb-xz-zcT" id="WZC-Vt-UqG"/>
                     </connections>
                 </viewController>
@@ -115,10 +122,10 @@
             </objects>
             <point key="canvasLocation" x="2275" y="68"/>
         </scene>
-        <!--Saved Tshirts-->
+        <!--View Controller-->
         <scene sceneID="cYQ-Kp-5ym">
             <objects>
-                <viewController id="vYo-eH-iCn" customClass="SavedTshirts" customModule="MyTshirtDesigner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vYo-eH-iCn" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="p8M-rs-7fh">
                         <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

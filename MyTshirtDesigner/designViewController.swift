@@ -123,6 +123,7 @@ func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent c
     }
     */
     @IBAction func editbutton(_ sender: UIBarButtonItem) {
+        imagedesign.image = UIImage()
     }
     
 

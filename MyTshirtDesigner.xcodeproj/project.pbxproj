@@ -15,6 +15,7 @@
 		F856D2D527A05BAB00931576 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F856D2D327A05BAB00931576 /* Main.storyboard */; };
 		F856D2D727A05BAC00931576 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F856D2D627A05BAC00931576 /* Assets.xcassets */; };
 		F856D2DA27A05BAC00931576 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F856D2D827A05BAC00931576 /* LaunchScreen.storyboard */; };
+		F8A5775D27A3034D007C030F /* SavedDesigns.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A5775C27A3034D007C030F /* SavedDesigns.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		F856D2D627A05BAC00931576 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F856D2D927A05BAC00931576 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F856D2DB27A05BAC00931576 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8A5775C27A3034D007C030F /* SavedDesigns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedDesigns.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				F856D2D127A05BAB00931576 /* ViewController.swift */,
 				F034E76527A06731002A34B5 /* SavedTshirts.swift */,
 				F856D2D327A05BAB00931576 /* Main.storyboard */,
+				F8A5775C27A3034D007C030F /* SavedDesigns.swift */,
 				F034E76327A06359002A34B5 /* designViewController.swift */,
 				F856D2D627A05BAC00931576 /* Assets.xcassets */,
 				F856D2D827A05BAC00931576 /* LaunchScreen.storyboard */,
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F856D2D227A05BAB00931576 /* ViewController.swift in Sources */,
+				F8A5775D27A3034D007C030F /* SavedDesigns.swift in Sources */,
 				F856D2CE27A05BAB00931576 /* AppDelegate.swift in Sources */,
 				F034E76427A06359002A34B5 /* designViewController.swift in Sources */,
 				F856D2D027A05BAB00931576 /* SceneDelegate.swift in Sources */,
