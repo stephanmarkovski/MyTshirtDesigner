@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SavedTshirts: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SavedTshirts: UIViewController {
     var mySavedTs = [""]
 
     override func viewDidLoad() {
