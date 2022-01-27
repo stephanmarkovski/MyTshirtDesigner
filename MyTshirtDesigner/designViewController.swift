@@ -40,7 +40,7 @@ class designViewController: UIViewController {
     }
     */
     @IBAction func editbutton(_ sender: UIBarButtonItem) {
-        
+        imagedesign.image = UIImage()
     }
     
 
