@@ -8,19 +8,11 @@
 import UIKit
 
 class SavedTshirts: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+    var mySavedTs = [""]
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
     }
     
 }
