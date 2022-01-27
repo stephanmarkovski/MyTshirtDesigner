@@ -87,7 +87,7 @@
                     <navigationItem key="navigationItem" id="Xgm-7G-Gog">
                         <nil key="title"/>
                         <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="XIb-xz-zcT">
-                            <rect key="frame" x="338.5" y="5" width="143" height="34"/>
+                            <rect key="frame" x="338.5" y="8" width="143" height="34"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
@@ -99,6 +99,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="imagedesign" destination="4kf-dI-irg" id="Xh1-km-jUz"/>
                         <outlet property="myTextField" destination="XIb-xz-zcT" id="WZC-Vt-UqG"/>
                     </connections>
                 </viewController>
