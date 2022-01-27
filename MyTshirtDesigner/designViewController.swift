@@ -9,6 +9,7 @@ import UIKit
 
 class designViewController: UIViewController {
     @IBOutlet weak var myTextField: UITextField!
+    var Designs = [SavedDesigns()]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,7 @@ class designViewController: UIViewController {
     }
     */
     @IBAction func editbutton(_ sender: UIBarButtonItem) {
+        
     }
     
 }
