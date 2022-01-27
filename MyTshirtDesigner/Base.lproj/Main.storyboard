@@ -20,8 +20,8 @@
                                 <rect key="frame" x="160" y="509" width="500" height="162"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="CRINGE">
-                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="100"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Design Your T-Shirt">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="IoV-xp-8en" kind="show" id="7Gl-yL-m5c"/>
