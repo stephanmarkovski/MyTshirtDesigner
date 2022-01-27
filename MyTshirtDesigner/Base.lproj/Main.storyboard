@@ -115,10 +115,10 @@
             </objects>
             <point key="canvasLocation" x="2275" y="68"/>
         </scene>
-        <!--View Controller-->
+        <!--Saved Tshirts-->
         <scene sceneID="cYQ-Kp-5ym">
             <objects>
-                <viewController id="vYo-eH-iCn" sceneMemberID="viewController">
+                <viewController id="vYo-eH-iCn" customClass="SavedTshirts" customModule="MyTshirtDesigner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="p8M-rs-7fh">
                         <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
