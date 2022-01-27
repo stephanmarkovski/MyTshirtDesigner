@@ -7,23 +7,25 @@
 
 import UIKit
 
-class SavedTshirts: UIViewController {
-
+class SavedTshirts: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    var Desgins = [SavedDesigns]()
+    
+    @IBOutlet weak var TableViewCell: UITableViewCell!
+    @IBOutlet weak var Tableview: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        Tableview.dataSource = self
+        Tableview.delegate = self
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Desgins.count
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = Tableview.dequeueReusableCell(withIdentifier: "mycell")!
+        cell.textLabel?.text = Desgins[indexPath.row].name
+        return cell
+    }
+    
 }
