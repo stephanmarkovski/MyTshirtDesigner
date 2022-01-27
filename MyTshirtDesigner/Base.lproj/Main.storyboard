@@ -60,6 +60,12 @@
                                     <action selector="myFontButton:" destination="IoV-xp-8en" eventType="touchUpInside" id="r9p-OP-MQk"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rR4-88-oV6">
+                                <rect key="frame" x="0.0" y="68" width="95" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="x0I-SA-BkS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -67,7 +73,7 @@
                     <navigationItem key="navigationItem" id="Xgm-7G-Gog">
                         <nil key="title"/>
                         <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="XIb-xz-zcT">
-                            <rect key="frame" x="338.5" y="8" width="143" height="34"/>
+                            <rect key="frame" x="338.5" y="5" width="143" height="34"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
