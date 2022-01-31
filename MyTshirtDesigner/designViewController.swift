@@ -25,10 +25,10 @@ class designViewController: UIViewController,UIPickerViewDelegate, UIPickerViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
-        scrollView.backgroundColor = .systemTeal
-        scrollView.contentSize = CGSize(width: scrollView.contentSize.width, height: UIScreen.main.bounds.height*100)
-        view.addSubview(scrollView)
+      //  scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
+      //  scrollView.backgroundColor = .systemTeal
+      //  scrollView.contentSize = CGSize(width: scrollView.contentSize.width, height: UIScreen.main.bounds.height*100)
+      //  view.addSubview(scrollView)
         
         for i in 0...100 {
              images.append(UIImageView(image: UIImage(systemName: "person.3.fill")))
