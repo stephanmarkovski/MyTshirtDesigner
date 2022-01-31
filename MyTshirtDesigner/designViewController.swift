@@ -112,7 +112,7 @@ func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent c
         }
     }
 }
-
+ 
     /*
     // MARK: - Navigation
 
@@ -123,7 +123,7 @@ func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent c
     }
     */
     @IBAction func editbutton(_ sender: UIBarButtonItem) {
-        imagedesign.image = UIImage()
+//        imagedesign.image = UIImage()
     }
     
 
