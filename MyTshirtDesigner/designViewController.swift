@@ -7,12 +7,12 @@
 
 import UIKit
 
-class designViewController: UIViewController {
+class designViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var scrollView: UIScrollView!
 
     var images = [UIImageView]()
-    
+    var tempSelected = 0
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var imagedesign: UIImageView!
     @IBOutlet weak var myTextField: UITextField!
@@ -147,6 +147,46 @@ func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent c
         imagedesign.image = UIImage()
     }
     
-
-
+    @IBAction func TemplateButton(_ sender: Any) {
+        
+         tempSelected = 0
+        tempAlert()
+        
+    }
+    
+    func tempAlert() {
+        // #### Creates an Alert to Change the Template Background #### //
+        
+        let textAlert = UIAlertController(title: "Change Template", message: "\n\n\n\n", preferredStyle: UIAlertController.Style.alert)
+        
+        let pickerViewTemp = UIPickerView(frame: CGRect(x: 25, y: 30, width: 200, height: 100))
+        pickerViewTemp.tag = 1
+        
+        textAlert.view.addSubview(pickerViewTemp)
+        pickerViewTemp.dataSource = self
+        pickerViewTemp.delegate = self
+        
+        let cancelAction = UIAlertAction(title: "Back", style: UIAlertAction.Style.cancel, handler: nil)
+        textAlert.addAction(cancelAction)
+        
+        let addAction = UIAlertAction(title: "Confirm", style: UIAlertAction.Style.default) { (action) in
+    
+            // #### Changes Background Image to Selected Template #### //
+            
+            if self.tempSelected == 0 {
+                self.imagedesign.image = UIImage()
+            } else if self.tempSelected == 1 {
+                self.imagedesign.image = UIImage(named:"white_shirt")
+            } else if self.tempSelected == 2 {
+                self.imagedesign.image = UIImage(named:"black_shirt")
+            } else if self.tempSelected == 3 {
+                self.imagedesign.image = UIImage(named:"orange_shirt")
+            }
+        }
+        
+        textAlert.addAction(addAction)
+        self.present(textAlert, animated: true, completion: nil)
+        
+    }
+    
 }
