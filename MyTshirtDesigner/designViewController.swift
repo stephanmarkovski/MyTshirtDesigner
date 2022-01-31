@@ -7,7 +7,7 @@
 
 import UIKit
 
-class designViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource {
+class designViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
 
@@ -43,18 +43,66 @@ class designViewController: UIViewController,UIPickerViewDelegate, UIPickerViewD
     }
     
     @IBAction func myFontButton(_ sender: Any) {
-//        func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-//            if pickerView.tag == 0 {
-//
-//            }
-//            return myFonts.count
-//        }
-//        func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//            if pickerView.tag == 0 {}
-//            return myFonts[row]
-//
+        let alertAction = UIAlertController(title: "Add Text", message: "\n\n\n\n\n\n\n\n\n", preferredStyle: UIAlertController.Style.alert)
+        
+        func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+            if row == 0 {
+                if pickerView.tag == 0 {
+                    colorValue = UIColor(red: 255.0/255, green: 103.0/255, blue: 27.0/255, alpha: 1.0)
+                    self.colorSelected = 0
+                } else if pickerView.tag == 1 {
+                    print("Blank Temp")
+                } else if pickerView.tag == 2 {
+                    selectedFont = "OLDSPORT02ATHLETICNCV"
+                    self.fontSelected = 0
+                }
+
+            } else if row == 1 {
+                if pickerView.tag == 0 {
+                    colorValue = UIColor(red: 81.0/255, green: 54.0/255, blue: 40.0/255, alpha: 1.0)
+                    self.colorSelected = 1
+                } else if pickerView.tag == 1 {
+                    print("White T-shirt Temp")
+                } else if pickerView.tag == 2 {
+                    selectedFont = "BrushScriptStd"
+                    self.fontSelected = 1
+                }
+
+            } else if row == 2 {
+                if pickerView.tag == 0 {
+                    colorValue = UIColor(red: 255.0/255, green: 255.0/255, blue: 255.0/255, alpha: 1.0)
+                    self.colorSelected = 2
+                } else if pickerView.tag == 1 {
+                    print("Black T-shirt Temp")
+                } else if pickerView.tag == 2 {
+                    selectedFont = "Bebas"
+                    self.fontSelected = 2
+                }
+
+            } else if row == 3 {
+                if pickerView.tag == 0 {
+                    colorValue = UIColor(red: 100.0/255, green: 101.0/255, blue: 105.0/255, alpha: 1.0)
+                    self.colorSelected = 3
+                } else if pickerView.tag == 1 {
+
+                } else if pickerView.tag == 2 {
+
+                }
+
+            } else if row == 4 {
+                if pickerView.tag == 0 {
+                    colorValue = UIColor(red: 202.0/255, green: 200.0/255, blue: 200.0/255, alpha: 1.0)
+                    self.colorSelected = 4
+                } else if pickerView.tag == 1 {
+
+                } else if pickerView.tag == 2 {
+
+                }
+            }
         }
+    }
     
+
 
 func numberOfComponents(in pickerView: UIPickerView) -> Int {
     return 1
