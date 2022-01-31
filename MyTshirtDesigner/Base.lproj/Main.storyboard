@@ -99,7 +99,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="imagedesign" destination="4kf-dI-irg" id="Xh1-km-jUz"/>
+                        <outlet property="imagedesign" destination="4kf-dI-irg" id="VkT-3Y-UKY"/>
                         <outlet property="myTextField" destination="XIb-xz-zcT" id="WZC-Vt-UqG"/>
                     </connections>
                 </viewController>

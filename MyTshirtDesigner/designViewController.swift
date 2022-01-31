@@ -8,6 +8,8 @@
 import UIKit
 
 class designViewController: UIViewController {
+    
+    @IBOutlet weak var imagedesign: UIImageView!
     @IBOutlet weak var myTextField: UITextField!
     var fontChoices = ["Old Sport Athletic","Brush Script MT Italic","Bebas"]
     var colorChoices = ["Hersey Orange","Hersey Brown","Opaque White","Hersey Charcoal","Hersey Gray"]
