@@ -9,6 +9,7 @@ import UIKit
 
 class designViewController: UIViewController {
     
+    @IBOutlet weak var name: UILabel!
     @IBOutlet weak var imagedesign: UIImageView!
     @IBOutlet weak var myTextField: UITextField!
     var fontChoices = ["Old Sport Athletic","Brush Script MT Italic","Bebas"]
@@ -20,6 +21,7 @@ class designViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         var tshirtTitle = myTextField.text!
+        var name = myTextField.text!
         // Do any additional setup after loading the view.
     }
     
