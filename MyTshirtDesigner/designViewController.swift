@@ -24,16 +24,7 @@ class designViewController: UIViewController {
     }
     
     @IBAction func myFontButton(_ sender: Any) {
-//        func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-//            if pickerView.tag == 0 {
-//
-//            }
-//            return myFonts.count
-//        }
-//        func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//            if pickerView.tag == 0 {}
-//            return myFonts[row]
-//
+        let picker = UIPickerView()
         }
     
 
