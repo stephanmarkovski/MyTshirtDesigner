@@ -9,8 +9,9 @@ import UIKit
 
 class designViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    @IBOutlet weak var scrollView: UIScrollView!
-
+   
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     var images = [UIImageView]()
     var tempSelected = 0
     @IBOutlet weak var name: UILabel!
@@ -34,7 +35,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
              images.append(UIImageView(image: UIImage(systemName: "person.3.fill")))
              images[i].frame = CGRect(x: 0, y: UIScreen.main.bounds.height*CGFloat(i), width: view.frame.width, height: view.frame.height)
              images[i].contentMode = .scaleAspectFit
-             scrollView.addSubview(images[i])
+             collectionView.addSubview(images[i])
            }
 
         var tshirtTitle = myTextField.text!
