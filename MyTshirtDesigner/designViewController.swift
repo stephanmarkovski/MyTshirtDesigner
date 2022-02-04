@@ -27,7 +27,8 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     var fontSelected = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        collectionView.dataSource = self
+        collectionView.delegate = self
         imagedesign.layer.masksToBounds = true
         imagedesign.layer.borderWidth = 1.5
         imagedesign.layer.borderColor = UIColor.white.cgColor
@@ -247,7 +248,6 @@ func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent c
         self.present(textAlert, animated: true, completion: nil)
         
     }
-    @IBOutlet weak var myCollection: UICollectionView!
     var layout:UICollectionViewFlowLayout!
     var currentData: [UIImage] = []
     var currentSizes: [CGSize] = []
@@ -303,7 +303,7 @@ func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent c
         let image: UIImage = currentData[indexPath.row]
         
         var imageView:UIImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-        //            var imageView:UIImageView=UIImageView(frame: CGRect(x: 0, y: 0, width: dataSizes[indexPath.row].width, height: dataSizes[indexPath.row].height))
+//                    var imageView:UIImageView=UIImageView(frame: CGRect(x: 0, y: 0, width: dataSizes[indexPath.row].width, height: dataSizes[indexPath.row].height))
         layout.itemSize = CGSize(width: currentSizes[indexPath.row].width, height: 100)
         for _ in currentSizes {
             if (currentSizes[indexPath.row].height<100){
