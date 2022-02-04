@@ -237,5 +237,6 @@ func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent c
         self.present(textAlert, animated: true, completion: nil)
         
     }
+    @IBOutlet weak var myCollection: UICollectionView!
     
 }
