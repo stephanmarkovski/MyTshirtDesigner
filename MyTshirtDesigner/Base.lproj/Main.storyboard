@@ -140,7 +140,6 @@
                     <connections>
                         <outlet property="collectionView" destination="f6i-fH-LnZ" id="Di1-2i-Ldl"/>
                         <outlet property="imagedesign" destination="4kf-dI-irg" id="VkT-3Y-UKY"/>
-                        <outlet property="myCollection" destination="f6i-fH-LnZ" id="JpY-Q9-qam"/>
                         <outlet property="myTextField" destination="XIb-xz-zcT" id="WZC-Vt-UqG"/>
                         <outlet property="name" destination="b23-tG-XYc" id="1hd-tD-TT5"/>
                     </connections>
