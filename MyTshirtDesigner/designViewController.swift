@@ -237,5 +237,74 @@ func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent c
         self.present(textAlert, animated: true, completion: nil)
         
     }
+    @IBOutlet weak var myCollection: UICollectionView!
+    var layout:UICollectionViewFlowLayout!
+    var currentData: [UIImage] = []
+    var currentSizes: [CGSize] = []
     
+    let data: [UIImage] = [#imageLiteral(resourceName: "FULL FACE dark background"),#imageLiteral(resourceName: "JUST THE H"),#imageLiteral(resourceName: "PRIMARY LOGO dark background"),#imageLiteral(resourceName: "stripes face")]
+    let dataSizes: [CGSize] = [CGSize(width: 100, height: 100),CGSize(width: 100, height: 100),CGSize(width: 144, height: 100),CGSize(width: 180, height: 75)]
+    
+    let huskyFaces: [UIImage] = [#imageLiteral(resourceName: "FULL FACE brown_white"),#imageLiteral(resourceName: "FULL FACE dark background"),#imageLiteral(resourceName: "FULL FACE light background"),#imageLiteral(resourceName: "FULL FACE orange"),#imageLiteral(resourceName: "FULL FACE white")]
+    let huskyFaceSizes: [CGSize] = [CGSize(width: 100, height: 100),CGSize(width: 100, height: 100),CGSize(width: 100, height: 100),CGSize(width: 100, height: 100),CGSize(width: 100, height: 100)]
+    let herseyHs: [UIImage] = [#imageLiteral(resourceName: "JUST THE H"),#imageLiteral(resourceName: "JUST THE H2"),#imageLiteral(resourceName: "H DOG"),#imageLiteral(resourceName: "LOCKUP")]
+    let herseyHSizes: [CGSize] = [CGSize(width: 100, height: 100),CGSize(width: 100, height: 100),CGSize(width: 100, height: 100),CGSize(width: 100, height: 100)]
+    let herseyLogo: [UIImage] = [#imageLiteral(resourceName: "PRIMARY LOGO dark background"),#imageLiteral(resourceName: "PRIMARY LOGO light background"),#imageLiteral(resourceName: "SECONDARY LOGO 1 light background"),#imageLiteral(resourceName: "SECONDARY LOGO 2 dark background"),#imageLiteral(resourceName: "SECONDARY LOGO 2 light background"),#imageLiteral(resourceName: "SECONDARY LOGO 2 WHITE"),#imageLiteral(resourceName: "SECONDARY LOGO 2a dark background")]
+    let herseyLogoSizes: [CGSize] = [CGSize(width: 144, height: 100),CGSize(width: 144, height: 100),CGSize(width: 144, height: 100),CGSize(width: 175, height: 100),CGSize(width: 175, height: 100),CGSize(width: 175, height: 100),CGSize(width: 175, height: 100)]
+    let herseyStripes: [UIImage] = [#imageLiteral(resourceName: "stripes face"),#imageLiteral(resourceName: "STRIPES H"),#imageLiteral(resourceName: "STRIPES")]
+    let herseyStripeSizes: [CGSize] = [CGSize(width: 180, height: 75),CGSize(width: 180, height: 75),CGSize(width: 180, height: 75)]
+    var imageTypeSelected = -1
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        // #### Number of Sections in CollectionView #### //
+        return 1
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // #### Determin the Number of Components in the CollectionView #### //
+        
+        if collectionView.tag == 0 {
+            return data.count
+        } else if collectionView.tag == 1{
+            switch imageTypeSelected {
+            case 0:
+                return huskyFaces.count
+            case 1:
+                return herseyHs.count
+            case 2:
+                return herseyLogo.count
+            case 3:
+                return herseyStripes.count
+            default:
+                break
+            }
+            
+        }
+        return 0
+    }
+    
+    func collectionView(_ selectedCollectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        //        if selectedCollectionView.tag == 0 {
+        let cell = selectedCollectionView.dequeueReusableCell(withReuseIdentifier: "collectCell", for: indexPath)
+        for subView in cell.contentView.subviews {
+            subView.removeFromSuperview()
+        }
+        
+        let image: UIImage = currentData[indexPath.row]
+        
+        var imageView:UIImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        //            var imageView:UIImageView=UIImageView(frame: CGRect(x: 0, y: 0, width: dataSizes[indexPath.row].width, height: dataSizes[indexPath.row].height))
+        layout.itemSize = CGSize(width: currentSizes[indexPath.row].width, height: 100)
+        for _ in currentSizes {
+            if (currentSizes[indexPath.row].height<100){
+                imageView = UIImageView(frame: CGRect(x: 0, y: (100-currentSizes[indexPath.row].height)/2, width: currentSizes[indexPath.row].width, height: currentSizes[indexPath.row].height))
+            } else {
+                imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: currentSizes[indexPath.row].width, height: currentSizes[indexPath.row].height))
+            }
+        }
+        imageView.image = image
+        
+        cell.contentView.addSubview(imageView)
+        return cell
+}
 }
