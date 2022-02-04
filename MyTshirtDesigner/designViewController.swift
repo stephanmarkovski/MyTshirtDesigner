@@ -7,7 +7,7 @@
 
 import UIKit
 
-class designViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class designViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource  {
     
    
     @IBOutlet weak var collectionView: UICollectionView!
