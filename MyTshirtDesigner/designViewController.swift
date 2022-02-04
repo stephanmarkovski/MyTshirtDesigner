@@ -26,6 +26,11 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        imagedesign.layer.masksToBounds = true
+        imagedesign.layer.borderWidth = 1.5
+        imagedesign.layer.borderColor = UIColor.white.cgColor
+        imagedesign.layer.cornerRadius = imagedesign.bounds.width / 2
+        
       //  scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
       //  scrollView.backgroundColor = .systemTeal
       //  scrollView.contentSize = CGSize(width: scrollView.contentSize.width, height: UIScreen.main.bounds.height*100)
