@@ -33,6 +33,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="wHr-AS-uAk">
+                        <barButtonItem key="leftBarButtonItem" title="Tutorial " id="g6O-zD-vv7">
+                            <connections>
+                                <segue destination="JMG-gI-ScC" kind="show" id="Xfe-YW-iXJ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Saved" id="p2a-jl-xql">
                             <connections>
                                 <segue destination="vYo-eH-iCn" kind="show" id="BX1-lN-sZm"/>
@@ -154,10 +159,11 @@
                         <viewLayoutGuide key="safeArea" id="ov2-NS-p4i"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="mXB-6F-wcW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bop-HK-q7G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2275" y="68"/>
+            <point key="canvasLocation" x="1628" y="803"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="cYQ-Kp-5ym">
