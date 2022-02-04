@@ -42,7 +42,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         var name = myTextField.text!
         // Do any additional setup after loading the view.
     }
-    
+    // This IS NOW THE TEMPLATE BUTTON
     @IBAction func myFontButton(_ sender: Any) {
         let alertAction = UIAlertController(title: "Add Text", message: "\n\n\n\n\n\n\n\n\n", preferredStyle: UIAlertController.Style.alert)
         
