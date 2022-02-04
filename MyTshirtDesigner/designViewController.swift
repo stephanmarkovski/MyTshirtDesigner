@@ -31,7 +31,6 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         collectionView.dataSource = self
         collectionView.delegate = self
        
-        collectionView.addGestureRecognizer(longPressGesture)
         
         currentData = data
         currentSizes = dataSizes
