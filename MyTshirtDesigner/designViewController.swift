@@ -13,7 +13,9 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     @IBOutlet weak var collectionView: UICollectionView!
     
     var images = [UIImageView]()
+    var pickerView = UIPickerView()
     var tempSelected = 0
+    
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var imagedesign: UIImageView!
     @IBOutlet weak var myTextField: UITextField!
