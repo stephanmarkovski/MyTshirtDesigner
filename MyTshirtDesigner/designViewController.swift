@@ -30,7 +30,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         collectionView.setCollectionViewLayout(layout, animated: true)
         collectionView.dataSource = self
         collectionView.delegate = self
-        let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.longTap(_:)))
+       
         collectionView.addGestureRecognizer(longPressGesture)
         
         currentData = data
