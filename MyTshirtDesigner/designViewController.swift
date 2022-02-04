@@ -49,6 +49,9 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     }
     // This IS NOW THE TEMPLATE BUTTON
     @IBAction func myFontButton(_ sender: Any) {
+        
+        tempSelected = 0
+       tempAlert()
         let alertAction = UIAlertController(title: "Add Text", message: "\n\n\n\n\n\n\n\n\n", preferredStyle: UIAlertController.Style.alert)
         
         func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
