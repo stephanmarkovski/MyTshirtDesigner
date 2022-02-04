@@ -15,7 +15,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     var images = [UIImageView]()
     var pickerView = UIPickerView()
     var tempSelected = 0
-    
+    var layout:UICollectionViewFlowLayout!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var imagedesign: UIImageView!
     @IBOutlet weak var myTextField: UITextField!
@@ -27,6 +27,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     var fontSelected = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        layout = UICollectionViewFlowLayout()
         collectionView.setCollectionViewLayout(layout, animated: true)
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -253,7 +254,7 @@ func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent c
         self.present(textAlert, animated: true, completion: nil)
         
     }
-    var layout:UICollectionViewFlowLayout!
+   
     var currentData: [UIImage] = []
     var currentSizes: [CGSize] = []
     
