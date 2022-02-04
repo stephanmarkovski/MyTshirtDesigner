@@ -25,8 +25,14 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     var fontSelected = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.setCollectionViewLayout(layout, animated: true)
         collectionView.dataSource = self
         collectionView.delegate = self
+        let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.longTap(_:)))
+        collectionView.addGestureRecognizer(longPressGesture)
+        
+        currentData = data
+        currentSizes = dataSizes
         imagedesign.layer.masksToBounds = true
         imagedesign.layer.borderWidth = 1.5
         imagedesign.layer.borderColor = UIColor.white.cgColor
@@ -293,7 +299,7 @@ func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent c
     
     func collectionView(_ selectedCollectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         //        if selectedCollectionView.tag == 0 {
-        let cell = selectedCollectionView.dequeueReusableCell(withReuseIdentifier: "collectCell", for: indexPath)
+        let cell = selectedCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         for subView in cell.contentView.subviews {
             subView.removeFromSuperview()
         }
