@@ -9,10 +9,18 @@ import UIKit
 
 class designViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource  {
     
-   
+
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var myTextLabel: UILabel!
+    var lastLocation = CGPoint(x: 0, y: 0)
+    var lastRotation: CGFloat = 0.000001
+    var lastScale:CGFloat = 0
+    var longPressRun = true
     var images = [UIImageView]()
+    
+    
     var pickerView = UIPickerView()
     var tempSelected = 0
     var layout:UICollectionViewFlowLayout!
@@ -26,12 +34,15 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     var selectedFont = "OLDSPORT02ATHLETICNCV"
     var colorValue = UIColor(red: 255.0/255, green: 103.0/255, blue: 27.0/255, alpha: 1.0)
     var fontSelected = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         layout = UICollectionViewFlowLayout()
         collectionView.setCollectionViewLayout(layout, animated: true)
         collectionView.dataSource = self
         collectionView.delegate = self
+        let tapRecognizer = UIPinchGestureRecognizer(target:self, action:#selector(detectTap))
+        self.view.addGestureRecognizer(tapRecognizer)
         
         
         currentData = data
@@ -51,6 +62,9 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
              images[i].frame = CGRect(x: 0, y: UIScreen.main.bounds.height*CGFloat(i), width: view.frame.width, height: view.frame.height)
              images[i].contentMode = .scaleAspectFit
              collectionView.addSubview(images[i])
+            
+            
+            
            }
 
         var tshirtTitle = myTextField.text!
@@ -70,6 +84,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         let saveAction = UIAlertAction(title: "Save", style: .default, handler: { alert -> Void in
             let firstTextField = textAlert.textFields![0] as UITextField
             var myLabel = firstTextField.text!
+         
             
         })
         textAlert.view.addSubview(pickerViewFont)
@@ -86,8 +101,12 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             self.present(textAlert, animated: true, completion: nil)
             
         }
-    
-    
+    @objc func detectTap(_ gestureRecognizer : UIPinchGestureRecognizer) {
+        if gestureRecognizer.state == .began {
+            gestureRecognizer.scale = lastScale
+        }
+        lastScale = gestureRecognizer.scale
+    }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         // #### Number of Sections in PickerView #### //
         
@@ -298,5 +317,8 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         
         cell.contentView.addSubview(imageView)
         return cell
+
+    
+
 }
 }
