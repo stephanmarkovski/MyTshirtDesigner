@@ -12,7 +12,14 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
    
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var myTextLabel: UILabel!
+    var lastLocation = CGPoint(x: 0, y: 0)
+    var lastRotation: CGFloat = 0.000001
+    var lastScale:CGFloat = 0
+    var longPressRun = true
     var images = [UIImageView]()
+    
+    
     var pickerView = UIPickerView()
     var tempSelected = 0
     var layout:UICollectionViewFlowLayout!
@@ -51,6 +58,9 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
              images[i].frame = CGRect(x: 0, y: UIScreen.main.bounds.height*CGFloat(i), width: view.frame.width, height: view.frame.height)
              images[i].contentMode = .scaleAspectFit
              collectionView.addSubview(images[i])
+            
+            
+            
            }
 
         var tshirtTitle = myTextField.text!
@@ -81,6 +91,8 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             self.present(textAlert, animated: true, completion: nil)
             
         }
+    @IBAction func myTapGesture(_ sender: Any) {
+    }
     
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
