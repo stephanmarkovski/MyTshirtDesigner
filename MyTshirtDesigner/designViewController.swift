@@ -74,20 +74,26 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         
         let pickerViewFont = UIPickerView(frame: CGRect(x: 25, y: 30, width: 200, height: 100))
         pickerViewFont.tag = 0
-        let action = UIAlertAction(title: "Name Input", style: .default) { (alertAction) in
-          let textField = textAlert.textFields![0] as UITextField
+        textAlert.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Enter Text"
         }
+        let saveAction = UIAlertAction(title: "Save", style: .default, handler: { alert -> Void in
+            let firstTextField = textAlert.textFields![0] as UITextField
+            var myLabel = firstTextField.text!
+            
+            
+        })
         textAlert.view.addSubview(pickerViewFont)
+        
         pickerViewFont.dataSource = self
         pickerViewFont.delegate = self
         
         let cancelAction = UIAlertAction(title: "Back", style: UIAlertAction.Style.cancel, handler: nil)
         textAlert.addAction(cancelAction)
         
-        let addAction = UIAlertAction(title: "Confirm", style: UIAlertAction.Style.default)
+       
+        textAlert.addAction(saveAction)
             
-           
-            textAlert.addAction(addAction)
             self.present(textAlert, animated: true, completion: nil)
             
         }
@@ -200,6 +206,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     }
     @IBAction func myFontButtonFr(_ sender: Any) {
         fontAlert()
+        
     }
     
     func tempAlert() {
