@@ -9,7 +9,8 @@ import UIKit
 
 class designViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource  {
     
-   
+
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var myTextLabel: UILabel!
@@ -80,7 +81,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         let saveAction = UIAlertAction(title: "Save", style: .default, handler: { alert -> Void in
             let firstTextField = textAlert.textFields![0] as UITextField
             var myLabel = firstTextField.text!
-            
+         
             
         })
         textAlert.view.addSubview(pickerViewFont)
@@ -97,9 +98,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             self.present(textAlert, animated: true, completion: nil)
             
         }
-    @IBAction func myTapGesture(_ sender: Any) {
-    }
-    
+
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         // #### Number of Sections in PickerView #### //
