@@ -105,6 +105,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="72" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
+                                        <gestureRecognizers/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -145,6 +146,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gTo-QM-jWE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="t6z-Lw-bPo"/>
             </objects>
             <point key="canvasLocation" x="1581.9512195121952" y="67.627118644067806"/>
         </scene>

@@ -34,12 +34,15 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     var selectedFont = "OLDSPORT02ATHLETICNCV"
     var colorValue = UIColor(red: 255.0/255, green: 103.0/255, blue: 27.0/255, alpha: 1.0)
     var fontSelected = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         layout = UICollectionViewFlowLayout()
         collectionView.setCollectionViewLayout(layout, animated: true)
         collectionView.dataSource = self
         collectionView.delegate = self
+        let tapRecognizer = UIPinchGestureRecognizer(target:self, action:#selector(detectTap))
+        self.view.addGestureRecognizer(tapRecognizer)
         
         
         currentData = data
@@ -98,8 +101,12 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             self.present(textAlert, animated: true, completion: nil)
             
         }
-
-    
+    @objc func detectTap(_ gestureRecognizer : UIPinchGestureRecognizer) {
+        if gestureRecognizer.state == .began {
+            gestureRecognizer.scale = lastScale
+        }
+        lastScale = gestureRecognizer.scale
+    }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         // #### Number of Sections in PickerView #### //
         
@@ -310,5 +317,8 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         
         cell.contentView.addSubview(imageView)
         return cell
+
+    
+
 }
 }
