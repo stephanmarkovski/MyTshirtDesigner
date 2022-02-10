@@ -71,6 +71,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             let firstTextField = textAlert.textFields![0] as UITextField
             var myLabel = firstTextField.text!
             
+            
         })
         textAlert.view.addSubview(pickerViewFont)
         
