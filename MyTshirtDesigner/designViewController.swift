@@ -7,11 +7,16 @@
 
 import UIKit
 
-class designViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource  {
+class designViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
+  
+    
     
 
     
     @IBOutlet weak var collectionView: UICollectionView!
+    var text = String()
+    var font = UIFont()
+    var textcolor = UIColor()
     
     @IBOutlet weak var myTextLabel: UILabel!
     var lastLocation = CGPoint(x: 0, y: 0)
@@ -20,6 +25,12 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     var longPressRun = true
     var images = [UIImageView]()
     
+    var advancedOn = false
+    var x = Double()
+    var y = Double()
+    var rotation = Double()
+    var color = UIColor()
+   
     
     var pickerView = UIPickerView()
     var tempSelected = 0
@@ -58,7 +69,8 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
       //  view.addSubview(scrollView)
         
         for i in 0...100 {
-             images.append(UIImageView(image: UIImage(systemName: "person.3.fill")))
+             
+            images.append(UIImageView(image: UIImage(systemName: "person.3.fill")))
              images[i].frame = CGRect(x: 0, y: UIScreen.main.bounds.height*CGFloat(i), width: view.frame.width, height: view.frame.height)
              images[i].contentMode = .scaleAspectFit
              collectionView.addSubview(images[i])
@@ -69,24 +81,89 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
 
         var tshirtTitle = myTextField.text!
         var name = myTextField.text!
+        
         // Do any additional setup after loading the view.
+        
+        
     }
+    
     func fontAlert() {
+        
         // #### Creates an Alert to Change the Template Background #### //
         
         let textAlert = UIAlertController(title: "Choose Text", message: "\n\n\n\n", preferredStyle: UIAlertController.Style.alert)
         
+        let pickerViewColor = UIPickerView(frame: CGRect(x: 25, y: 30, width: 200, height: 100))
         let pickerViewFont = UIPickerView(frame: CGRect(x: 25, y: 30, width: 200, height: 100))
+        
+        textAlert.view.addSubview(pickerViewColor)
+        pickerViewColor.dataSource = self
+        pickerViewColor.delegate = self
+        
         pickerViewFont.tag = 0
         textAlert.addTextField { (textField : UITextField!) -> Void in
             textField.placeholder = "Enter Text"
         }
+       
         let saveAction = UIAlertAction(title: "Save", style: .default, handler: { alert -> Void in
-            let firstTextField = textAlert.textFields![0] as UITextField
-            var myLabel = firstTextField.text!
-         
+            let firstTextField = textAlert.textFields![0].text
+            let addedSizeString: String = (textAlert.textFields?[1].text)!
+            var addedLocationX = self.lastLocation.x
+            var addedLocationY = self.lastLocation.y
+            var addedText = textAlert.textFields?[0].text
+            var text = String()
+            var font = UIFont()
+            var textcolor = UIColor()
             
+
+            if !addedText!.isEmpty{
+                if let addedSize = Double(addedSizeString) {
+                    text = addedText!
+                    self.lastScale = CGFloat(addedSize)
+
+                    font = UIFont(name: self.selectedFont, size: CGFloat(addedSize))!
+                    textcolor = self.colorValue
+                    self.myTextLabel.sizeToFit()
+                    self.name.textAlignment  =  .center
+                    self.colorSelected = pickerViewColor.selectedRow(inComponent: 0)
+                    self.fontSelected = pickerViewFont.selectedRow(inComponent: 0)
+                } else {
+                    let addedText = textAlert.textFields?[0].text
+                    let addedSize = textAlert.textFields?[1].text
+                    
+                    text = addedText!
+                    self.lastScale = CGFloat(Double(addedSize!)!)
+                    font = UIFont(name: self.selectedFont, size: CGFloat(Double(addedSize!)!))!
+                    
+                    textcolor = self.colorValue
+                    self.myTextLabel.sizeToFit()
+                    self.myTextLabel.textAlignment = .center
+                    self.colorSelected = pickerViewColor.selectedRow(inComponent: 0)
+                    self.fontSelected = pickerViewFont.selectedRow(inComponent: 0)
+                    
+                }
+            }
+            if (self.advancedOn) {
+                if let x = Double((textAlert.textFields?[2].text)!) {
+                    addedLocationX = CGFloat(x)
+                    self.name.center.x  = addedLocationX
+                }
+                if let y = Double((textAlert.textFields?[3].text)!) {
+                    addedLocationY = CGFloat(y)
+                    self.name.center.y = addedLocationY
+                }
+                if let r = Double((textAlert.textFields?[4].text)!) {
+                    self.name.transform =  CGAffineTransform(rotationAngle: CGFloat(r + 0.000001))
+                    self.lastRotation = CGFloat(r +  0.000001)
+                }
+            }
+            self.lastLocation = self.name.center
+
+
+
+
         })
+        
         textAlert.view.addSubview(pickerViewFont)
         
         pickerViewFont.dataSource = self
@@ -101,19 +178,23 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             self.present(textAlert, animated: true, completion: nil)
             
         }
+   
     @objc func detectTap(_ gestureRecognizer : UIPinchGestureRecognizer) {
         if gestureRecognizer.state == .began {
             gestureRecognizer.scale = lastScale
         }
+       
         lastScale = gestureRecognizer.scale
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
+       
         // #### Number of Sections in PickerView #### //
         
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+       
         // #### Determin the Number of Components in the PickerView #### //
         // #### Test for PickerView Tags #### //
         
@@ -128,6 +209,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+       
         // #### Determin the Components in the PickerView #### //
         // #### Test for PickerView Tags #### //
         
@@ -142,6 +224,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
         // #### Testfor the Selected Row in the CollectionView #### //
         
         if row == 0 {
@@ -210,12 +293,14 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         tempAlert()
         
     }
+   
     @IBAction func myFontButtonFr(_ sender: Any) {
         fontAlert()
         
     }
     
     func tempAlert() {
+        
         // #### Creates an Alert to Change the Template Background #### //
         
         let textAlert = UIAlertController(title: "Change Template", message: "\n\n\n\n", preferredStyle: UIAlertController.Style.alert)
@@ -272,6 +357,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         // #### Determin the Number of Components in the CollectionView #### //
         
         if collectionView.tag == 0 {
@@ -291,11 +377,14 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             }
             
         }
+       
         return 0
     }
     
     func collectionView(_ selectedCollectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         //        if selectedCollectionView.tag == 0 {
+       
         let cell = selectedCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         for subView in cell.contentView.subviews {
             subView.removeFromSuperview()
@@ -313,6 +402,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                 imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: currentSizes[indexPath.row].width, height: currentSizes[indexPath.row].height))
             }
         }
+        
         imageView.image = image
         
         cell.contentView.addSubview(imageView)
