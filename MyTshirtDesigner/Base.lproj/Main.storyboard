@@ -150,6 +150,13 @@
                                     <action selector="TemplateButton:" destination="IoV-xp-8en" eventType="touchUpInside" id="ze2-PS-Myt"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mes-b8-aLu">
+                                <rect key="frame" x="210" y="426" width="402" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="53"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="x0I-SA-BkS"/>
                         <color key="backgroundColor" systemColor="systemGrayColor"/>
@@ -157,7 +164,7 @@
                     <navigationItem key="navigationItem" id="Xgm-7G-Gog">
                         <nil key="title"/>
                         <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name Here" textAlignment="center" minimumFontSize="17" id="XIb-xz-zcT">
-                            <rect key="frame" x="273" y="8" width="274" height="34"/>
+                            <rect key="frame" x="273" y="5" width="274" height="34"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
@@ -172,6 +179,7 @@
                     <connections>
                         <outlet property="collectionView" destination="f6i-fH-LnZ" id="Di1-2i-Ldl"/>
                         <outlet property="imagedesign" destination="4kf-dI-irg" id="VkT-3Y-UKY"/>
+                        <outlet property="labell" destination="mes-b8-aLu" id="Jhr-bX-eJB"/>
                         <outlet property="myTextField" destination="XIb-xz-zcT" id="WZC-Vt-UqG"/>
                         <outlet property="name" destination="b23-tG-XYc" id="1hd-tD-TT5"/>
                     </connections>

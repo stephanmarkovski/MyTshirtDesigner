@@ -12,6 +12,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     
 
+    @IBOutlet weak var labell: UILabel!
     
     @IBOutlet weak var collectionView: UICollectionView!
     var text = String()
@@ -108,6 +109,8 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         }
        
         let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: { alert -> Void in
+            let sum = textAlert.textFields![0].text
+            labell.text = sum
 //            let firstTextField = textAlert.textFields![0].text
 //            let addedSizeString: String = (textAlert.textFields?[1].text)!
 //            var addedLocationX = self.lastLocation.x
