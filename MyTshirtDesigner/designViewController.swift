@@ -30,7 +30,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     var y = Double()
     var rotation = Double()
     var color = UIColor()
-   
+    var center = CGPoint(x: 0, y: 0)
     
     var pickerView = UIPickerView()
     var tempSelected = 0
@@ -93,71 +93,83 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         
         let textAlert = UIAlertController(title: "Choose Text", message: "\n\n\n\n", preferredStyle: UIAlertController.Style.alert)
         
-        let pickerViewColor = UIPickerView(frame: CGRect(x: 25, y: 30, width: 200, height: 100))
+        
         let pickerViewFont = UIPickerView(frame: CGRect(x: 25, y: 30, width: 200, height: 100))
         
-        textAlert.view.addSubview(pickerViewColor)
-        pickerViewColor.dataSource = self
-        pickerViewColor.delegate = self
+
         
-        pickerViewFont.tag = 0
+        textAlert.view.addSubview(pickerViewFont)
+        pickerViewFont.dataSource = self
+        pickerViewFont.delegate = self
+        
+        pickerViewFont.tag = 2
         textAlert.addTextField { (textField : UITextField!) -> Void in
             textField.placeholder = "Enter Text"
         }
        
-        let saveAction = UIAlertAction(title: "Save", style: .default, handler: { alert -> Void in
-            let firstTextField = textAlert.textFields![0].text
-            let addedSizeString: String = (textAlert.textFields?[1].text)!
-            var addedLocationX = self.lastLocation.x
-            var addedLocationY = self.lastLocation.y
-            var addedText = textAlert.textFields?[0].text
-            var text = String()
-            var font = UIFont()
-            var textcolor = UIColor()
-            
+        let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: { alert -> Void in
+//            let firstTextField = textAlert.textFields![0].text
+//            let addedSizeString: String = (textAlert.textFields?[1].text)!
+//            var addedLocationX = self.lastLocation.x
+//            var addedLocationY = self.lastLocation.y
+//            var addedText = textAlert.textFields?[0].text
+//
+//
+//            if !addedText!.isEmpty{
+//                if let addedSize = Double(addedSizeString) {
+//                    self.text = addedText!
+//                    self.lastScale = CGFloat(addedSize)
+//
+//                    self.font = UIFont(name: self.selectedFont, size: CGFloat(addedSize))!
+//                    self.textcolor = self.colorValue
+//                    self.myTextLabel.sizeToFit()
+//                    self.myTextLabel.textAlignment  =  .center
+//                    self.fontSelected = pickerViewFont.selectedRow(inComponent: 0)
+//                } else {
+//                    let addedText = textAlert.textFields?[0].text
+//                    let addedSize = textAlert.textFields?[1].text
+//
+//                    self.text = addedText!
+//                    self.lastScale = CGFloat(Double(addedSize!)!)
+//                    self.font = UIFont(name: self.selectedFont, size: CGFloat(Double(addedSize!)!))!
 
-            if !addedText!.isEmpty{
-                if let addedSize = Double(addedSizeString) {
-                    text = addedText!
-                    self.lastScale = CGFloat(addedSize)
-
-                    font = UIFont(name: self.selectedFont, size: CGFloat(addedSize))!
-                    textcolor = self.colorValue
-                    self.myTextLabel.sizeToFit()
-                    self.name.textAlignment  =  .center
-                    self.colorSelected = pickerViewColor.selectedRow(inComponent: 0)
-                    self.fontSelected = pickerViewFont.selectedRow(inComponent: 0)
-                } else {
-                    let addedText = textAlert.textFields?[0].text
-                    let addedSize = textAlert.textFields?[1].text
-                    
-                    text = addedText!
-                    self.lastScale = CGFloat(Double(addedSize!)!)
-                    font = UIFont(name: self.selectedFont, size: CGFloat(Double(addedSize!)!))!
-                    
-                    textcolor = self.colorValue
-                    self.myTextLabel.sizeToFit()
-                    self.myTextLabel.textAlignment = .center
-                    self.colorSelected = pickerViewColor.selectedRow(inComponent: 0)
-                    self.fontSelected = pickerViewFont.selectedRow(inComponent: 0)
-                    
-                }
-            }
-            if (self.advancedOn) {
-                if let x = Double((textAlert.textFields?[2].text)!) {
-                    addedLocationX = CGFloat(x)
-                    self.name.center.x  = addedLocationX
-                }
-                if let y = Double((textAlert.textFields?[3].text)!) {
-                    addedLocationY = CGFloat(y)
-                    self.name.center.y = addedLocationY
-                }
-                if let r = Double((textAlert.textFields?[4].text)!) {
-                    self.name.transform =  CGAffineTransform(rotationAngle: CGFloat(r + 0.000001))
-                    self.lastRotation = CGFloat(r +  0.000001)
-                }
-            }
-            self.lastLocation = self.name.center
+//                    self.textcolor = self.colorValue
+//                    self.name.sizeToFit()
+//                    self.name.textAlignment = .center
+//                    self.fontSelected = pickerViewFont.selectedRow(inComponent: 0)
+//
+//               }
+//            }
+//            if (self.advancedOn) {
+//                if let x = Double((textAlert.textFields?[2].text)!) {
+//                    addedLocationX = CGFloat(x)
+//                    self.name.center.x  = addedLocationX
+//                }
+//                if let y = Double((textAlert.textFields?[3].text)!) {
+//                    addedLocationY = CGFloat(y)
+//                    self.name.center.y = addedLocationY
+//                }
+//                if let r = Double((textAlert.textFields?[4].text)!) {
+//                    self.name.transform =  CGAffineTransform(rotationAngle: CGFloat(r + 0.000001))
+//                    self.lastRotation = CGFloat(r +  0.000001)
+//                }
+//
+//                textAlert.addTextField { (textField) in
+//                    textField.placeholder = "Type X Location"
+//                    textField.text = "\(self.center.x)"
+//                }
+//
+//                textAlert.addTextField { (textField) in
+//                    textField.placeholder = "Type Y Location"
+//                    textField.text = "\(self.center.y)"
+//                }
+//
+//                textAlert.addTextField { (textField) in
+//                    textField.placeholder = "Type Rotation"
+//                    textField.text = "\(String(format: "%.4f", self.lastRotation))"
+//                }
+//            }
+//            self.lastLocation = self.name.center
 
 
 
