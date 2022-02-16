@@ -94,7 +94,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         
         let cancelAction = UIAlertAction(title: "Back", style: UIAlertAction.Style.cancel, handler: nil)
         textAlert.addAction(cancelAction)
-        
+//        myTextLabel.text = myTextField.text!
        
         textAlert.addAction(saveAction)
             
