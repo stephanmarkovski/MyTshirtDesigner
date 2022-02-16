@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D7247E7A2EA4E8674856A60 /* Pods_MyTshirtDesigner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A12A3824C206B87F56ED6FFD /* Pods_MyTshirtDesigner.framework */; };
 		F034E76427A06359002A34B5 /* designViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034E76327A06359002A34B5 /* designViewController.swift */; };
 		F034E76627A06731002A34B5 /* SavedTshirts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034E76527A06731002A34B5 /* SavedTshirts.swift */; };
 		F856D2CE27A05BAB00931576 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F856D2CD27A05BAB00931576 /* AppDelegate.swift */; };
@@ -19,8 +20,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		84BE78A72199A5B89B336E8C /* Pods-MyTshirtDesigner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTshirtDesigner.debug.xcconfig"; path = "Target Support Files/Pods-MyTshirtDesigner/Pods-MyTshirtDesigner.debug.xcconfig"; sourceTree = "<group>"; };
+		A12A3824C206B87F56ED6FFD /* Pods_MyTshirtDesigner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTshirtDesigner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F034E76327A06359002A34B5 /* designViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = designViewController.swift; sourceTree = "<group>"; };
 		F034E76527A06731002A34B5 /* SavedTshirts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTshirts.swift; sourceTree = "<group>"; };
+		F3E1FAC562DFFCE8864ABBD3 /* Pods-MyTshirtDesigner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTshirtDesigner.release.xcconfig"; path = "Target Support Files/Pods-MyTshirtDesigner/Pods-MyTshirtDesigner.release.xcconfig"; sourceTree = "<group>"; };
 		F856D2CA27A05BAB00931576 /* MyTshirtDesigner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTshirtDesigner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F856D2CD27A05BAB00931576 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F856D2CF27A05BAB00931576 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,17 +41,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D7247E7A2EA4E8674856A60 /* Pods_MyTshirtDesigner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F9153C6812D75F240266F3C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A12A3824C206B87F56ED6FFD /* Pods_MyTshirtDesigner.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		965804A131F1837EBF72171C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				84BE78A72199A5B89B336E8C /* Pods-MyTshirtDesigner.debug.xcconfig */,
+				F3E1FAC562DFFCE8864ABBD3 /* Pods-MyTshirtDesigner.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F856D2C127A05BAB00931576 = {
 			isa = PBXGroup;
 			children = (
 				F856D2CC27A05BAB00931576 /* MyTshirtDesigner */,
 				F856D2CB27A05BAB00931576 /* Products */,
+				965804A131F1837EBF72171C /* Pods */,
+				2F9153C6812D75F240266F3C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,9 +108,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F856D2DE27A05BAC00931576 /* Build configuration list for PBXNativeTarget "MyTshirtDesigner" */;
 			buildPhases = (
+				713B5F51431F606F775A14B8 /* [CP] Check Pods Manifest.lock */,
 				F856D2C627A05BAB00931576 /* Sources */,
 				F856D2C727A05BAB00931576 /* Frameworks */,
 				F856D2C827A05BAB00931576 /* Resources */,
+				2F862F47717E58F491896AFD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -141,6 +168,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2F862F47717E58F491896AFD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyTshirtDesigner/Pods-MyTshirtDesigner-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyTshirtDesigner/Pods-MyTshirtDesigner-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyTshirtDesigner/Pods-MyTshirtDesigner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		713B5F51431F606F775A14B8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyTshirtDesigner-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F856D2C627A05BAB00931576 /* Sources */ = {
@@ -296,6 +365,7 @@
 		};
 		F856D2DF27A05BAC00931576 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84BE78A72199A5B89B336E8C /* Pods-MyTshirtDesigner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -323,6 +393,7 @@
 		};
 		F856D2E027A05BAC00931576 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3E1FAC562DFFCE8864ABBD3 /* Pods-MyTshirtDesigner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
