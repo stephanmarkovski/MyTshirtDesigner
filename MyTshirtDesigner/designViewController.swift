@@ -108,9 +108,9 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             textField.placeholder = "Enter Text"
         }
        
-        let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: { alert -> Void in
+        let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: { [self] alert -> Void in
             let sum = textAlert.textFields![0].text
-            labell.text = sum
+            self.labell.text = sum
 //            let firstTextField = textAlert.textFields![0].text
 //            let addedSizeString: String = (textAlert.textFields?[1].text)!
 //            var addedLocationX = self.lastLocation.x

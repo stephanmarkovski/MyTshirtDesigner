@@ -112,6 +112,7 @@
 				F856D2C627A05BAB00931576 /* Sources */,
 				F856D2C727A05BAB00931576 /* Frameworks */,
 				F856D2C827A05BAB00931576 /* Resources */,
+				00B04709A1BC96B99B99212F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -169,6 +170,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		00B04709A1BC96B99B99212F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyTshirtDesigner/Pods-MyTshirtDesigner-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyTshirtDesigner/Pods-MyTshirtDesigner-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyTshirtDesigner/Pods-MyTshirtDesigner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		713B5F51431F606F775A14B8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

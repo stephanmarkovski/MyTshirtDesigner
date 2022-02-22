@@ -1,4 +1,6 @@
 PODS:
+  - Firebase (8.9.1):
+    - Firebase/Core (= 8.9.1)
   - Firebase/Core (8.9.1):
     - Firebase/CoreOnly
     - FirebaseAnalytics (~> 8.9.1)
@@ -87,6 +89,7 @@ PODS:
   - PromisesObjC (2.0.0)
 
 DEPENDENCIES:
+  - Firebase
   - Firebase/Core
 
 SPEC REPOS:
@@ -114,6 +117,6 @@ SPEC CHECKSUMS:
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
 
-PODFILE CHECKSUM: 824fc45122a4b73c04fa664379d4131c854d158c
+PODFILE CHECKSUM: d824fde799808be250a937f1ea6858ebfb53c532
 
 COCOAPODS: 1.11.2
