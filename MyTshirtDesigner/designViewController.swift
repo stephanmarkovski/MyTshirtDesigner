@@ -201,9 +201,9 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         }
    
     @objc func detectTap(_ gestureRecognizer : UITapGestureRecognizer) {
-        gestureRecognizer.touchesBegan(Set<UITouch>, with: UIEvent)
+//        gestureRecognizer.touchesBegan(Set<UITouch>, with: UIEvent)
     }
-    }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
        
         // #### Number of Sections in PickerView #### //
@@ -421,12 +421,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             }
         }
         
-        let tap = UITapGestureRecognizer(target: self, action: "gotToSelectedPlace:")
-        tap.numberOfTapsRequired = 1
-        cell.imageView.userInteractionEnabled = true
-          cell.imageView.addGestureRecognizer(tap)
-          cell.imageView.file = places[indexPath.row].picture
-          cell.imageView.loadInBackground()
+     
 
         imageView.image = image
         
