@@ -110,15 +110,12 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
        
         let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: { [self] alert -> Void in
             let sum = textAlert.textFields![0].text
-            self.labell.text = sum
-//            let firstTextField = textAlert.textFields![0].text
-//            let addedSizeString: String = (textAlert.textFields?[1].text)!
-//            var addedLocationX = self.lastLocation.x
-//            var addedLocationY = self.lastLocation.y
-//            var addedText = textAlert.textFields?[0].text
-//
-//
-//            if !addedText!.isEmpty{
+            
+            labell.text = sum
+            var fontSize = Double("\(labell)")
+            var labelString: String = "\(labell)"
+           // self.font = UIFont(name: self.selectedFont, size: CGFloat(fontSize!))!
+                //            if !addedText!.isEmpty{
 //                if let addedSize = Double(addedSizeString) {
 //                    self.text = addedText!
 //                    self.lastScale = CGFloat(addedSize)
