@@ -191,9 +191,10 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             
         }
    
-    @objc func detectTap(_ gestureRecognizer : UIPinchGestureRecognizer) {
+    @objc func detectTap(_ gestureRecognizer : UITapGestureRecognizer) {
         if gestureRecognizer.state == .began {
             gestureRecognizer.scale = lastScale
+            
         }
        
         lastScale = gestureRecognizer.scale
@@ -424,5 +425,6 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
 
 }
     @IBAction func saveButtonAction(_ sender: Any) {
+        
     }
 }
