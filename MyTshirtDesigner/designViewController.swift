@@ -110,14 +110,20 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
        
         let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: { [self] alert -> Void in
             let addedText = textAlert.textFields?[0].text
-            labell.text = addedText
             labell.textColor = .red
             
             if labell.text == labell.text {
                 
-                labell.font = UIFont(name: "\(fontChoices)", size: 50)
-                labell.text = addedText
+                labell.font = UIFont(name: "Old Sport Athletic", size: 80)
                 
+                labell.text = "\(addedText)"
+            } else {
+                labell.font = UIFont(name: "Brush Script MT Italic", size: 80)
+                
+                labell.text = "\(addedText)"
+            } else {
+                labell.font = UIFont(name: "Bebas", size: 80)
+                labell.text = "\(addedText)"
             }
         
            
