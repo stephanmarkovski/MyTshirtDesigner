@@ -8,6 +8,8 @@
 import UIKit
 
 class designViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
+   
+    
   
     
     
@@ -53,10 +55,10 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         collectionView.setCollectionViewLayout(layout, animated: true)
         collectionView.dataSource = self
         collectionView.delegate = self
-        let tapRecognizer = UIPinchGestureRecognizer(target:self, action:#selector(detectTap))
-        self.view.addGestureRecognizer(tapRecognizer)
-        
-        
+//        let tapRecognizer = UIPinchGestureRecognizer(target:self, action:#selector(detectTap))
+//        self.view.addGestureRecognizer(tapRecognizer)
+//        
+//        
         currentData = data
         currentSizes = dataSizes
         imagedesign.layer.masksToBounds = true
@@ -121,9 +123,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                 labell.font = UIFont(name: "Brush Script MT Italic", size: 80)
                 
                 labell.text = "\(addedText)"
-            } else {
-                labell.font = UIFont(name: "Bebas", size: 80)
-                labell.text = "\(addedText)"
+            
             }
         
            
@@ -189,7 +189,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
 
 
 
-        })
+            })
         
         textAlert.view.addSubview(pickerViewFont)
         
@@ -206,9 +206,9 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             
         }
    
-    @objc func detectTap(_ gestureRecognizer : UITapGestureRecognizer) {
-//        gestureRecognizer.touchesBegan(Set<UITouch>, with: UIEvent)
-    }
+//    @objc func detectTap(_ gestureRecognizer : (UITapGestureRecognizer) {
+//////        gestureRecognizer.touchesBegan(Set<UITouch>, with: UIEvent)
+//    }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
        
@@ -407,7 +407,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     func collectionView(_ selectedCollectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        //        if selectedCollectionView.tag == 0 {
+                if selectedCollectionView.tag == 0 {
        
         let cell = selectedCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         for subView in cell.contentView.subviews {
@@ -433,11 +433,10 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         
         cell.contentView.addSubview(imageView)
         return cell
-
-    
-
-}
-    @IBAction func saveButtonAction(_ sender: Any) {
-        
+                }
+        return collectionView(<#T##selectedCollectionView: UICollectionView##UICollectionView#>, cellForItemAt: <#T##IndexPath#>)
     }
+    
 }
+
+
