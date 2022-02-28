@@ -407,7 +407,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     func collectionView(_ selectedCollectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-                if selectedCollectionView.tag == 0 {
+     //          if selectedCollectionView.tag == 0 {
        
         let cell = selectedCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         for subView in cell.contentView.subviews {
@@ -433,10 +433,8 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         
         cell.contentView.addSubview(imageView)
         return cell
-                }
-        return collectionView(<#T##selectedCollectionView: UICollectionView##UICollectionView#>, cellForItemAt: <#T##IndexPath#>)
-    }
-    
 }
+}
+
 
 
