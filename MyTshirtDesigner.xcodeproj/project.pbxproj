@@ -18,6 +18,8 @@
 		F856D2D727A05BAC00931576 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F856D2D627A05BAC00931576 /* Assets.xcassets */; };
 		F856D2DA27A05BAC00931576 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F856D2D827A05BAC00931576 /* LaunchScreen.storyboard */; };
 		F8A5775D27A3034D007C030F /* SavedDesigns.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A5775C27A3034D007C030F /* SavedDesigns.swift */; };
+		F8C6396D27CFD05400AA96A4 /* OLD SPORT 01 COLLEGE NCV.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8C6396C27CFD05400AA96A4 /* OLD SPORT 01 COLLEGE NCV.ttf */; };
+		F8C6396F27CFD24100AA96A4 /* BRSHSCRP.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8C6396E27CFD24100AA96A4 /* BRSHSCRP.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		F856D2D927A05BAC00931576 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F856D2DB27A05BAC00931576 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8A5775C27A3034D007C030F /* SavedDesigns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedDesigns.swift; sourceTree = "<group>"; };
+		F8C6396C27CFD05400AA96A4 /* OLD SPORT 01 COLLEGE NCV.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OLD SPORT 01 COLLEGE NCV.ttf"; sourceTree = "<group>"; };
+		F8C6396E27CFD24100AA96A4 /* BRSHSCRP.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BRSHSCRP.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 		F856D2CC27A05BAB00931576 /* MyTshirtDesigner */ = {
 			isa = PBXGroup;
 			children = (
+				F8C6396B27CFCFE200AA96A4 /* Fonts */,
 				F856D2CD27A05BAB00931576 /* AppDelegate.swift */,
 				F856D2CF27A05BAB00931576 /* SceneDelegate.swift */,
 				F856D2DB27A05BAC00931576 /* Info.plist */,
@@ -101,6 +106,15 @@
 				F856D2D827A05BAC00931576 /* LaunchScreen.storyboard */,
 			);
 			path = MyTshirtDesigner;
+			sourceTree = "<group>";
+		};
+		F8C6396B27CFCFE200AA96A4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F8C6396C27CFD05400AA96A4 /* OLD SPORT 01 COLLEGE NCV.ttf */,
+				F8C6396E27CFD24100AA96A4 /* BRSHSCRP.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,8 +177,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8C6396F27CFD24100AA96A4 /* BRSHSCRP.ttf in Resources */,
 				F856D2DA27A05BAC00931576 /* LaunchScreen.storyboard in Resources */,
 				F856D2D727A05BAC00931576 /* Assets.xcassets in Resources */,
+				F8C6396D27CFD05400AA96A4 /* OLD SPORT 01 COLLEGE NCV.ttf in Resources */,
 				F856D2D527A05BAB00931576 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
