@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3D7247E7A2EA4E8674856A60 /* Pods_MyTshirtDesigner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A12A3824C206B87F56ED6FFD /* Pods_MyTshirtDesigner.framework */; };
+		AD54091227CFD91700257A7C /* ImageFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD54091127CFD91700257A7C /* ImageFile.swift */; };
 		F034E76427A06359002A34B5 /* designViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034E76327A06359002A34B5 /* designViewController.swift */; };
 		F034E76627A06731002A34B5 /* SavedTshirts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034E76527A06731002A34B5 /* SavedTshirts.swift */; };
 		F856D2CE27A05BAB00931576 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F856D2CD27A05BAB00931576 /* AppDelegate.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		84BE78A72199A5B89B336E8C /* Pods-MyTshirtDesigner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTshirtDesigner.debug.xcconfig"; path = "Target Support Files/Pods-MyTshirtDesigner/Pods-MyTshirtDesigner.debug.xcconfig"; sourceTree = "<group>"; };
 		A12A3824C206B87F56ED6FFD /* Pods_MyTshirtDesigner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTshirtDesigner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD54091127CFD91700257A7C /* ImageFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFile.swift; sourceTree = "<group>"; };
 		F034E76327A06359002A34B5 /* designViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = designViewController.swift; sourceTree = "<group>"; };
 		F034E76527A06731002A34B5 /* SavedTshirts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTshirts.swift; sourceTree = "<group>"; };
 		F3E1FAC562DFFCE8864ABBD3 /* Pods-MyTshirtDesigner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTshirtDesigner.release.xcconfig"; path = "Target Support Files/Pods-MyTshirtDesigner/Pods-MyTshirtDesigner.release.xcconfig"; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				F856D2D327A05BAB00931576 /* Main.storyboard */,
 				F8A5775C27A3034D007C030F /* SavedDesigns.swift */,
 				F034E76327A06359002A34B5 /* designViewController.swift */,
+				AD54091127CFD91700257A7C /* ImageFile.swift */,
 				F856D2D627A05BAC00931576 /* Assets.xcassets */,
 				F856D2D827A05BAC00931576 /* LaunchScreen.storyboard */,
 			);
@@ -220,6 +223,7 @@
 				F856D2CE27A05BAB00931576 /* AppDelegate.swift in Sources */,
 				F034E76427A06359002A34B5 /* designViewController.swift in Sources */,
 				F856D2D027A05BAB00931576 /* SceneDelegate.swift in Sources */,
+				AD54091227CFD91700257A7C /* ImageFile.swift in Sources */,
 				F034E76627A06731002A34B5 /* SavedTshirts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
