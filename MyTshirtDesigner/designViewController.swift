@@ -40,12 +40,13 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     var layout:UICollectionViewFlowLayout!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var imagedesign: UIImageView!
+    
     @IBOutlet weak var myTextField: UITextField!
     var fontChoices = ["Old Sport Athletic","Brush Script MT Italic","Bebas"]
     var colorChoices = ["Hersey Orange","Hersey Brown","Opaque White","Hersey Charcoal","Hersey Gray"]
     var tempChoices = ["Blank","White Shirt","Black Shirt","Orange Shirt"]
  var colorSelected = 0
-    var selectedFont = "OLDSPORT02ATHLETICNCV"
+    var selectedFont = "OLD SPORT 01 COLLEGE NCV"
     var colorValue = UIColor(red: 255.0/255, green: 103.0/255, blue: 27.0/255, alpha: 1.0)
     var fontSelected = 0
     
@@ -55,10 +56,15 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         collectionView.setCollectionViewLayout(layout, animated: true)
         collectionView.dataSource = self
         collectionView.delegate = self
+        imagedesign.isUserInteractionEnabled
 //        let tapRecognizer = UIPinchGestureRecognizer(target:self, action:#selector(detectTap))
 //        self.view.addGestureRecognizer(tapRecognizer)
-//        
-//        
+//
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(myTapGesture(_:)))
+        collectionView.addGestureRecognizer(tapGestureRecognizer)
+
+        
+
         currentData = data
         currentSizes = dataSizes
         imagedesign.layer.masksToBounds = true
@@ -112,20 +118,16 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
        
         let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: { [self] alert -> Void in
             let addedText = textAlert.textFields?[0].text
+           
             self.labell.text = addedText
             
-//            if labell.text == labell.text {
-//
-//                labell.font = UIFont(name: "Old Sport Athletic", size: 80)
-//
-//                labell.text = "\(addedText)"
-//            } else {
-//                labell.font = UIFont(name: "Brush Script MT Italic", size: 80)
-//
-//                labell.text = "\(addedText)"
-//
-//            }
-//
+            if labell.text == labell.text {
+
+                labell.font = UIFont(name: "OLD SPORT 01 COLLEGE NCV", size: 50)
+                
+                labell.text = "\(addedText!)"
+            }
+
            
            
             
@@ -434,6 +436,11 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         cell.contentView.addSubview(imageView)
         return cell
 }
+    @IBAction func myTapGesture(_ sender: UITapGestureRecognizer) {
+        
+        
+    }
+    
 }
 
 
