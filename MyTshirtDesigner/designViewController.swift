@@ -45,7 +45,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     var colorChoices = ["Hersey Orange","Hersey Brown","Opaque White","Hersey Charcoal","Hersey Gray"]
     var tempChoices = ["Blank","White Shirt","Black Shirt","Orange Shirt"]
  var colorSelected = 0
-    var selectedFont = "OLDSPORT02ATHLETICNCV"
+    var selectedFont = "OLD SPORT 01 COLLEGE NCV"
     var colorValue = UIColor(red: 255.0/255, green: 103.0/255, blue: 27.0/255, alpha: 1.0)
     var fontSelected = 0
     
@@ -112,15 +112,15 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
        
         let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: { [self] alert -> Void in
             let addedText = textAlert.textFields?[0].text
+           
             self.labell.text = addedText
             
             if labell.text == labell.text {
 
                 labell.font = UIFont(name: "OLD SPORT 01 COLLEGE NCV", size: 50)
-
+                
                 labell.text = "\(addedText!)"
             }
-           
 
            
            
