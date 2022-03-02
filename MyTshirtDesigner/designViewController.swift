@@ -40,6 +40,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     var layout:UICollectionViewFlowLayout!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var imagedesign: UIImageView!
+    
     @IBOutlet weak var myTextField: UITextField!
     var fontChoices = ["Old Sport Athletic","Brush Script MT Italic","Bebas"]
     var colorChoices = ["Hersey Orange","Hersey Brown","Opaque White","Hersey Charcoal","Hersey Gray"]
@@ -55,10 +56,15 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         collectionView.setCollectionViewLayout(layout, animated: true)
         collectionView.dataSource = self
         collectionView.delegate = self
+        imagedesign.isUserInteractionEnabled
 //        let tapRecognizer = UIPinchGestureRecognizer(target:self, action:#selector(detectTap))
 //        self.view.addGestureRecognizer(tapRecognizer)
-//        
-//        
+//
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(myTapGesture(_:)))
+        collectionView.addGestureRecognizer(tapGestureRecognizer)
+
+        
+
         currentData = data
         currentSizes = dataSizes
         imagedesign.layer.masksToBounds = true
@@ -430,6 +436,11 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         cell.contentView.addSubview(imageView)
         return cell
 }
+    @IBAction func myTapGesture(_ sender: UITapGestureRecognizer) {
+        
+        
+    }
+    
 }
 
 
