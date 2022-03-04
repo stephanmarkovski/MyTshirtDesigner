@@ -115,12 +115,18 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         textAlert.addTextField { (textField : UITextField!) -> Void in
             textField.placeholder = "Enter Text"
         }
+        
+        textAlert.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Enter Size"
+        }
        
         let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: { [self] alert -> Void in
             let addedText = textAlert.textFields?[0].text
+            let addedSize = textAlert.textFields?[1].text
            
             self.labell.text = addedText
             
+            let sum = Double(addedSize!)
 //            if selectedFont == fontChoices[0] {
 //
 //                labell.font = UIFont(name: "OLD SPORT 01 COLLEGE NCV", size: 50)
@@ -130,7 +136,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             
             if labell == labell {
                 
-                labell.font = UIFont(name: selectedFont, size: 50)
+                labell.font = UIFont(name: selectedFont, size: sum!)
                 
                 labell.text = "\(addedText!)"
                 
