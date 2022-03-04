@@ -124,11 +124,13 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             if labell.text == labell.text {
 
                 labell.font = UIFont(name: "OLD SPORT 01 COLLEGE NCV", size: 50)
+             
                 
                 labell.text = "\(addedText!)"
             }
 
-           
+            
+            
            
             
           
@@ -398,6 +400,8 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                 return herseyLogo.count
             case 3:
                 return herseyStripes.count
+            case 4:
+                return
             default:
                 break
             }
