@@ -100,18 +100,22 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         
         // #### Creates an Alert to Change the Template Background #### //
         
-        let textAlert = UIAlertController(title: "Choose Text", message: "\n\n\n\n", preferredStyle: UIAlertController.Style.alert)
+        let textAlert = UIAlertController(title: "Choose Text", message: "\n\n\n\n\n\n\n\n\n", preferredStyle: UIAlertController.Style.alert)
         
         
         let pickerViewFont = UIPickerView(frame: CGRect(x: 25, y: 30, width: 200, height: 100))
-        
+        let pickerViewColor = UIPickerView(frame: CGRect(x: 25, y: 100, width: 200, height: 100))
 
+        pickerViewFont.tag = 2
         
         textAlert.view.addSubview(pickerViewFont)
         pickerViewFont.dataSource = self
         pickerViewFont.delegate = self
         
-        pickerViewFont.tag = 2
+        textAlert.view.addSubview(pickerViewColor)
+        pickerViewColor.dataSource = self
+        pickerViewColor.delegate = self
+        
         textAlert.addTextField { (textField : UITextField!) -> Void in
             textField.placeholder = "Enter Text"
         }
@@ -123,6 +127,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: { [self] alert -> Void in
             let addedText = textAlert.textFields?[0].text
             let addedSize = textAlert.textFields?[1].text
+            
            
             self.labell.text = addedText
             
@@ -136,13 +141,14 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             
             if labell == labell {
                 
-                labell.font = UIFont(name: selectedFont, size: sum!)
+                
+                    labell.font = UIFont(name: selectedFont, size: sum!)
+                labell.textColor = colorValue
                 
                 labell.text = "\(addedText!)"
                 
             }
-           
-           
+            
             
           
                 //            if !addedText!.isEmpty{
