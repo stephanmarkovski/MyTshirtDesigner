@@ -205,7 +205,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gTo-QM-jWE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="t6z-Lw-bPo">
                     <connections>
-                        <action selector="myTapGesture:" destination="IoV-xp-8en" id="PZS-eb-fIn"/>
+                        <action selector="myTapGestureRecognizer:" destination="IoV-xp-8en" id="qfY-9Z-UaP"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
