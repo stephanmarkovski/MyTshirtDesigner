@@ -7,7 +7,7 @@
 
 import UIKit
 
-class designViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
+class designViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UIGestureRecognizerDelegate {
    
     
   
@@ -56,14 +56,17 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         collectionView.setCollectionViewLayout(layout, animated: true)
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.tag = 0
         imagedesign.isUserInteractionEnabled
 //        let tapRecognizer = UIPinchGestureRecognizer(target:self, action:#selector(detectTap))
 //        self.view.addGestureRecognizer(tapRecognizer)
 //
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(myTapGesture(_:)))
-        collectionView.addGestureRecognizer(tapGestureRecognizer)
+       
 
-        
+        let tap = UITapGestureRecognizer(target: self, action: Selector("handleTap:"))
+        tap.delegate = self
+        collectionView.addGestureRecognizer(tap)
+
 
         currentData = data
         currentSizes = dataSizes
@@ -455,9 +458,55 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         cell.contentView.addSubview(imageView)
         return cell
 }
-    @IBAction func myTapGesture(_ sender: UITapGestureRecognizer) {
+    @IBAction func myTapGestureRecognizer(_ sender: UIGestureRecognizer) {
+        switch(sender.state) {
+    case .began:
+        guard let selectedIndexPath = collectionView.indexPathForItem(at: sender.location(in: collectionView)) else {
+            return
+        }
+        collectionView.beginInteractiveMovementForItem(at: selectedIndexPath)
         
         
+        imageTypeSelected = selectedIndexPath[1]
+        
+        switch imageTypeSelected {
+        case 0:
+            currentSizes = huskyFaceSizes
+            currentData = huskyFaces
+            break
+        case 1:
+            currentSizes = herseyHSizes
+            currentData = herseyHs
+            break
+        case 2:
+            currentSizes = herseyLogoSizes
+            currentData = herseyLogo
+            break
+        case 3:
+            currentSizes = herseyStripeSizes
+            currentData = herseyStripes
+            break
+        default:
+            break
+        }
+        
+            
+            collectionView.reloadData()
+            
+        case .possible:
+            break
+        case .changed:
+            break
+        case .ended:
+            break
+        case .cancelled:
+            break
+        case .failed:
+            break
+        @unknown default:
+            break
+        }
+    
     }
     
 }
