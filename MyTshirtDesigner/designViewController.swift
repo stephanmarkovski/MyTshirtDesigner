@@ -411,8 +411,6 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                 return herseyLogo.count
             case 3:
                 return herseyStripes.count
-            case 4:
-                return
             default:
                 break
             }
