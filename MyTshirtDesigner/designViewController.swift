@@ -42,7 +42,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     @IBOutlet weak var imagedesign: UIImageView!
     
     @IBOutlet weak var myTextField: UITextField!
-    var fontChoices = ["Old Sport Athletic","Brush Script MT Italic","Bebas"]
+    var fontChoices = ["OLD SPORT 01 COLLEGE NCV","BrushScriptMTItalic","Bebas"]
     var colorChoices = ["Hersey Orange","Hersey Brown","Opaque White","Hersey Charcoal","Hersey Gray"]
     var tempChoices = ["Blank","White Shirt","Black Shirt","Orange Shirt"]
  var colorSelected = 0
@@ -121,13 +121,20 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
            
             self.labell.text = addedText
             
-            if labell.text == labell.text {
-
-                labell.font = UIFont(name: "OLD SPORT 01 COLLEGE NCV", size: 50)
+//            if selectedFont == fontChoices[0] {
+//
+//                labell.font = UIFont(name: "OLD SPORT 01 COLLEGE NCV", size: 50)
+//
+//                labell.text = "\(addedText!)"
+//            }
+            
+            if labell == labell {
+                
+                labell.font = UIFont(name: selectedFont, size: 50)
                 
                 labell.text = "\(addedText!)"
+                
             }
-
            
            
             
