@@ -4,8 +4,9 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>BrushScriptMTItalic.ttf</string>
+		<string>Bebas.ttf</string>
 		<string>OLD SPORT 01 COLLEGE NCV.ttf</string>
-		<string>BRSHSCRP.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
