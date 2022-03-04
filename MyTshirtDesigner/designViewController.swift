@@ -42,7 +42,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     @IBOutlet weak var imagedesign: UIImageView!
     
     @IBOutlet weak var myTextField: UITextField!
-    var fontChoices = ["Old Sport Athletic","Brush Script MT Italic","Bebas"]
+    var fontChoices = ["OLD SPORT 01 COLLEGE NCV","BrushScriptMTItalic","Bebas"]
     var colorChoices = ["Hersey Orange","Hersey Brown","Opaque White","Hersey Charcoal","Hersey Gray"]
     var tempChoices = ["Blank","White Shirt","Black Shirt","Orange Shirt"]
  var colorSelected = 0
@@ -118,19 +118,32 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         textAlert.addTextField { (textField : UITextField!) -> Void in
             textField.placeholder = "Enter Text"
         }
+        
+        textAlert.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Enter Size"
+        }
        
         let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: { [self] alert -> Void in
             let addedText = textAlert.textFields?[0].text
+            let addedSize = textAlert.textFields?[1].text
            
             self.labell.text = addedText
             
-            if labell.text == labell.text {
-
-                labell.font = UIFont(name: "OLD SPORT 01 COLLEGE NCV", size: 50)
+            let sum = Double(addedSize!)
+//            if selectedFont == fontChoices[0] {
+//
+//                labell.font = UIFont(name: "OLD SPORT 01 COLLEGE NCV", size: 50)
+//
+//                labell.text = "\(addedText!)"
+//            }
+            
+            if labell == labell {
+                
+                labell.font = UIFont(name: selectedFont, size: sum!)
                 
                 labell.text = "\(addedText!)"
+                
             }
-
            
            
             
