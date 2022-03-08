@@ -50,6 +50,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     var colorValue = UIColor(red: 255.0/255, green: 103.0/255, blue: 27.0/255, alpha: 1.0)
     var fontSelected = 0
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         layout = UICollectionViewFlowLayout()
@@ -464,15 +465,15 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         return cell
 }
     @IBAction func myTapGestureRecognizer(_ sender: UIGestureRecognizer) {
+      
         switch(sender.state) {
+            
     case .began:
-        guard let selectedIndexPath = collectionView.indexPathForItem(at: sender.location(in: collectionView)) else {
-            return
-        }
-        collectionView.beginInteractiveMovementForItem(at: selectedIndexPath)
+         let selectedIndexPath = collectionView.indexPathForItem(at: sender.location(in: collectionView))
+            collectionView.beginInteractiveMovementForItem(at: selectedIndexPath!)
         
         
-        imageTypeSelected = selectedIndexPath[1]
+            imageTypeSelected = selectedIndexPath![1]
         
         switch imageTypeSelected {
         case 0:
