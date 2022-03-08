@@ -44,11 +44,12 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     @IBOutlet weak var myTextField: UITextField!
     var fontChoices = ["OLD SPORT 01 COLLEGE NCV","BrushScriptMTItalic","Bebas"]
     var colorChoices = ["Hersey Orange","Hersey Brown","Opaque White","Hersey Charcoal","Hersey Gray"]
-    var tempChoices = ["Blank","White Shirt","Black Shirt","Orange Shirt"]
+    var tempChoices = ["Blank","White Shirt","Black Shirt","Orange Shirt", "Gray Shirt", "Brown Shirt"]
  var colorSelected = 0
     var selectedFont = "OLD SPORT 01 COLLEGE NCV"
     var colorValue = UIColor(red: 255.0/255, green: 103.0/255, blue: 27.0/255, alpha: 1.0)
     var fontSelected = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,18 +104,22 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         
         // #### Creates an Alert to Change the Template Background #### //
         
-        let textAlert = UIAlertController(title: "Choose Text", message: "\n\n\n\n", preferredStyle: UIAlertController.Style.alert)
+        let textAlert = UIAlertController(title: "Choose Text", message: "\n\n\n\n\n\n\n\n\n", preferredStyle: UIAlertController.Style.alert)
         
         
         let pickerViewFont = UIPickerView(frame: CGRect(x: 25, y: 30, width: 200, height: 100))
-        
+        let pickerViewColor = UIPickerView(frame: CGRect(x: 25, y: 100, width: 200, height: 100))
 
+        pickerViewFont.tag = 2
         
         textAlert.view.addSubview(pickerViewFont)
         pickerViewFont.dataSource = self
         pickerViewFont.delegate = self
         
-        pickerViewFont.tag = 2
+        textAlert.view.addSubview(pickerViewColor)
+        pickerViewColor.dataSource = self
+        pickerViewColor.delegate = self
+        
         textAlert.addTextField { (textField : UITextField!) -> Void in
             textField.placeholder = "Enter Text"
         }
@@ -126,6 +131,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: { [self] alert -> Void in
             let addedText = textAlert.textFields?[0].text
             let addedSize = textAlert.textFields?[1].text
+            
            
             self.labell.text = addedText
             
@@ -139,13 +145,14 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             
             if labell == labell {
                 
-                labell.font = UIFont(name: selectedFont, size: sum!)
+                
+                    labell.font = UIFont(name: selectedFont, size: sum!)
+                labell.textColor = colorValue
                 
                 labell.text = "\(addedText!)"
                 
             }
-           
-           
+            
             
           
                 //            if !addedText!.isEmpty{
@@ -327,6 +334,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
         @IBAction func editbutton(_ sender: UIBarButtonItem) {
         imagedesign.image = UIImage()
+            labell.text = ""
     }
     
     @IBAction func TemplateButton(_ sender: Any) {
@@ -369,6 +377,10 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                 self.imagedesign.image = UIImage(named:"black_shirt")
             } else if self.tempSelected == 3 {
                 self.imagedesign.image = UIImage(named:"orange_shirt")
+            } else if self.tempSelected == 4 {
+                self.imagedesign.image = UIImage(named: "grey_shirt")
+            } else if self.tempSelected == 5 {
+                self.imagedesign.image = UIImage(named: "brown_shirt")
             }
         }
         
@@ -453,15 +465,15 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         return cell
 }
     @IBAction func myTapGestureRecognizer(_ sender: UIGestureRecognizer) {
+      
         switch(sender.state) {
+            
     case .began:
-        guard let selectedIndexPath = collectionView.indexPathForItem(at: sender.location(in: collectionView)) else {
-            return
-        }
-        collectionView.beginInteractiveMovementForItem(at: selectedIndexPath)
+         let selectedIndexPath = collectionView.indexPathForItem(at: sender.location(in: collectionView))
+            collectionView.beginInteractiveMovementForItem(at: selectedIndexPath!)
         
         
-        imageTypeSelected = selectedIndexPath[1]
+            imageTypeSelected = selectedIndexPath![1]
         
         switch imageTypeSelected {
         case 0:
