@@ -27,7 +27,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     var lastScale:CGFloat = 0
     var longPressRun = true
     var images = [UIImageView]()
-    
+    var imageTypeSelected = -1
     var advancedOn = false
     var x = Double()
     var y = Double()
@@ -377,10 +377,6 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                 self.imagedesign.image = UIImage(named:"black_shirt")
             } else if self.tempSelected == 3 {
                 self.imagedesign.image = UIImage(named:"orange_shirt")
-            } else if self.tempSelected == 4 {
-                self.imagedesign.image = UIImage(named: "grey_shirt")
-            } else if self.tempSelected == 5 {
-                self.imagedesign.image = UIImage(named: "brown_shirt")
             }
         }
         
@@ -403,7 +399,6 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     let herseyLogoSizes: [CGSize] = [CGSize(width: 144, height: 100),CGSize(width: 144, height: 100),CGSize(width: 144, height: 100),CGSize(width: 175, height: 100),CGSize(width: 175, height: 100),CGSize(width: 175, height: 100),CGSize(width: 175, height: 100)]
     let herseyStripes: [UIImage] = [#imageLiteral(resourceName: "stripes face"),#imageLiteral(resourceName: "STRIPES H"),#imageLiteral(resourceName: "STRIPES")]
     let herseyStripeSizes: [CGSize] = [CGSize(width: 180, height: 75),CGSize(width: 180, height: 75),CGSize(width: 180, height: 75)]
-    var imageTypeSelected = -1
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #### Number of Sections in CollectionView #### //
         return 1
@@ -437,8 +432,10 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     func collectionView(_ selectedCollectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-     //          if selectedCollectionView.tag == 0 {
-       
+//              if selectedCollectionView.tag == 0 {
+//
+//              }
+        
         let cell = selectedCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         for subView in cell.contentView.subviews {
             subView.removeFromSuperview()
@@ -456,7 +453,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                 imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: currentSizes[indexPath.row].width, height: currentSizes[indexPath.row].height))
             }
         }
-        
+              
      
 
         imageView.image = image
@@ -464,6 +461,21 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         cell.contentView.addSubview(imageView)
         return cell
 }
+    
+    func createImage(_ image:UIImage?, _ location:CGRect) {
+        
+        let imageView = ImageFile(image: image, From: self, frame: location, collectionViewSize: collectionView.frame)
+        
+        self.view.addSubview(imageView)
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        createImage((currentData[indexPath.row]), CGRect(x: 300, y: 200, width: currentSizes[indexPath.row].width, height: currentSizes[indexPath.row].height))
+        
+        
+        //next add methods to make image movable in app
+    }
     @IBAction func myTapGestureRecognizer(_ sender: UIGestureRecognizer) {
       
         switch(sender.state) {
