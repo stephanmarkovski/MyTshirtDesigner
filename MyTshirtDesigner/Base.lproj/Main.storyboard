@@ -43,6 +43,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FULL FACE dark background" translatesAutoresizingMaskIntoConstraints="NO" id="h6q-Ah-xny">
                                 <rect key="frame" x="230" y="234" width="361" height="307"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wu-n1-wcW">
                                 <rect key="frame" x="215" y="691" width="397" height="89"/>
@@ -304,10 +305,6 @@
                                 <rect key="frame" x="-79" y="458" width="422" height="350"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2022-02-22 at 11.09.53 AM" translatesAutoresizingMaskIntoConstraints="NO" id="0W5-nN-TY6">
-                                <rect key="frame" x="-79" y="68" width="422" height="339"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ov2-NS-p4i"/>
                         <color key="backgroundColor" systemColor="systemGrayColor"/>
@@ -393,7 +390,6 @@
     <color key="tintColor" systemColor="systemOrangeColor"/>
     <resources>
         <image name="FULL FACE dark background" width="2009" height="2224"/>
-        <image name="Screen Shot 2022-02-22 at 11.09.53 AM" width="1002" height="1406"/>
         <image name="Screen Shot 2022-02-22 at 11.17.03 AM" width="1000" height="1409"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
