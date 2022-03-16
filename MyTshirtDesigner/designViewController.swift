@@ -360,7 +360,6 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     let herseyLogoSizes: [CGSize] = [CGSize(width: 144, height: 100),CGSize(width: 144, height: 100),CGSize(width: 144, height: 100),CGSize(width: 175, height: 100),CGSize(width: 175, height: 100),CGSize(width: 175, height: 100),CGSize(width: 175, height: 100)]
     let herseyStripes: [UIImage] = [#imageLiteral(resourceName: "stripes face"),#imageLiteral(resourceName: "STRIPES H"),#imageLiteral(resourceName: "STRIPES")]
     let herseyStripeSizes: [CGSize] = [CGSize(width: 180, height: 75),CGSize(width: 180, height: 75),CGSize(width: 180, height: 75)]
-    var imageTypeSelected = -1
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #### Number of Sections in CollectionView #### //
         return 1
