@@ -152,67 +152,6 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                 labell.text = "\(addedText!)"
                 
             }
-            
-            
-          
-                //            if !addedText!.isEmpty{
-//                if let addedSize = Double(addedSizeString) {
-//                    self.text = addedText!
-//                    self.lastScale = CGFloat(addedSize)
-//
-//                    self.font = UIFont(name: self.selectedFont, size: CGFloat(addedSize))!
-//                    self.textcolor = self.colorValue
-//                    self.myTextLabel.sizeToFit()
-//                    self.myTextLabel.textAlignment  =  .center
-//                    self.fontSelected = pickerViewFont.selectedRow(inComponent: 0)
-//                } else {
-//                    let addedText = textAlert.textFields?[0].text
-//                    let addedSize = textAlert.textFields?[1].text
-//
-//                    self.text = addedText!
-//                    self.lastScale = CGFloat(Double(addedSize!)!)
-//                    self.font = UIFont(name: self.selectedFont, size: CGFloat(Double(addedSize!)!))!
-
-//                    self.textcolor = self.colorValue
-//                    self.name.sizeToFit()
-//                    self.name.textAlignment = .center
-//                    self.fontSelected = pickerViewFont.selectedRow(inComponent: 0)
-//
-//               }
-//            }
-//            if (self.advancedOn) {
-//                if let x = Double((textAlert.textFields?[2].text)!) {
-//                    addedLocationX = CGFloat(x)
-//                    self.name.center.x  = addedLocationX
-//                }
-//                if let y = Double((textAlert.textFields?[3].text)!) {
-//                    addedLocationY = CGFloat(y)
-//                    self.name.center.y = addedLocationY
-//                }
-//                if let r = Double((textAlert.textFields?[4].text)!) {
-//                    self.name.transform =  CGAffineTransform(rotationAngle: CGFloat(r + 0.000001))
-//                    self.lastRotation = CGFloat(r +  0.000001)
-//                }
-//
-//                textAlert.addTextField { (textField) in
-//                    textField.placeholder = "Type X Location"
-//                    textField.text = "\(self.center.x)"
-//                }
-//
-//                textAlert.addTextField { (textField) in
-//                    textField.placeholder = "Type Y Location"
-//                    textField.text = "\(self.center.y)"
-//                }
-//
-//                textAlert.addTextField { (textField) in
-//                    textField.placeholder = "Type Rotation"
-//                    textField.text = "\(String(format: "%.4f", self.lastRotation))"
-//                }
-//            }
-//            self.lastLocation = self.name.center
-
-
-
 
             })
         
@@ -223,7 +162,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         
         let cancelAction = UIAlertAction(title: "Back", style: UIAlertAction.Style.cancel, handler: nil)
         textAlert.addAction(cancelAction)
-//        myTextLabel.text = myTextField.text!
+
        
         textAlert.addAction(saveAction)
             
