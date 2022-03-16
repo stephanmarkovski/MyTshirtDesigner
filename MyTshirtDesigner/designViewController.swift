@@ -44,7 +44,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     @IBOutlet weak var myTextField: UITextField!
     var fontChoices = ["OLD SPORT 01 COLLEGE NCV","BrushScriptMTItalic","Bebas"]
     var colorChoices = ["Hersey Orange","Hersey Brown","Opaque White","Hersey Charcoal","Hersey Gray"]
-    var tempChoices = ["Blank","White Shirt","Black Shirt","Orange Shirt"]
+    var tempChoices = ["Blank","White Shirt","Black Shirt","Orange Shirt","Grey Shirt","Brown Shirt"]
  var colorSelected = 0
     var selectedFont = "OLD SPORT 01 COLLEGE NCV"
     var colorValue = UIColor(red: 255.0/255, green: 103.0/255, blue: 27.0/255, alpha: 1.0)
@@ -58,7 +58,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.tag = 0
-        imagedesign.isUserInteractionEnabled
+        imagedesign.isUserInteractionEnabled = true
 //        let tapRecognizer = UIPinchGestureRecognizer(target:self, action:#selector(detectTap))
 //        self.view.addGestureRecognizer(tapRecognizer)
 //
@@ -325,10 +325,28 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                 colorValue = UIColor(red: 202.0/255, green: 200.0/255, blue: 200.0/255, alpha: 1.0)
                 colorSelected = 4
             } else if pickerView.tag == 1 {
-                
+                tempSelected = 4
             } else if pickerView.tag == 2 {
                 
             }
+        }else if row == 5 {
+            if pickerView.tag == 0 {
+                colorValue = UIColor(red: 5/255, green: 101.0/255, blue: 105.0/255, alpha: 1.0)
+                colorSelected = 3
+            } else if pickerView.tag == 1 {
+                tempSelected = 5
+            } else if pickerView.tag == 2 {
+                
+            }
+            }  else if row == 6{
+                if pickerView.tag == 0 {
+                    colorValue = UIColor(red: 8/255, green: 101.0/255, blue: 105.0/255, alpha: 1.0)
+                    colorSelected = 3
+                } else if pickerView.tag == 1 {
+                 
+                } else if pickerView.tag == 2 {
+                    
+                }
         }
     }
     
@@ -376,6 +394,10 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                 self.imagedesign.image = UIImage(named:"black_shirt")
             } else if self.tempSelected == 3 {
                 self.imagedesign.image = UIImage(named:"orange_shirt")
+            } else if self.tempSelected == 4 {
+                self.imagedesign.image = UIImage(named:"grey_shirt")
+            } else if self.tempSelected == 5 {
+                self.imagedesign.image = UIImage(named:"brown_shirt")
             }
         }
         
