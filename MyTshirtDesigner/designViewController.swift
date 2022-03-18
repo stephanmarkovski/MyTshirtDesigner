@@ -60,12 +60,14 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         collectionView.tag = 0
         imagedesign.isUserInteractionEnabled = true
         labell.isUserInteractionEnabled = true
+        collectionView.isUserInteractionEnabled = true
 //        let tapRecognizer = UIPinchGestureRecognizer(target:self, action:#selector(detectTap))
 //        self.view.addGestureRecognizer(tapRecognizer)
 //
        
 
-        let tap = UITapGestureRecognizer(target: self, action: Selector("handleTap:"))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.myTapGestureRecognizer(_:)))
+        
         tap.delegate = self
         collectionView.addGestureRecognizer(tap)
         let drag = UIPanGestureRecognizer(target: self, action: #selector(self.dragGestureRecognizer(gestureRecognizer:)))
@@ -404,10 +406,12 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     func collectionView(_ selectedCollectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-     //          if selectedCollectionView.tag == 0 {
-       
-        let cell = selectedCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        for subView in cell.contentView.subviews {
+//              if selectedCollectionView.tag == 0 {
+//
+//              }
+        
+        let Cell = selectedCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        for subView in Cell.contentView.subviews {
             subView.removeFromSuperview()
         }
         
@@ -424,12 +428,11 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             }
         }
               
-     
 
         imageView.image = image
         
-        cell.contentView.addSubview(imageView)
-        return cell
+        Cell.contentView.addSubview(imageView)
+        return Cell
 }
     
     func createImage(_ image:UIImage?, _ location:CGRect) {
@@ -451,11 +454,12 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         switch(sender.state) {
             
     case .began:
-         let selectedIndexPath = collectionView.indexPathForItem(at: sender.location(in: collectionView))
-            collectionView.beginInteractiveMovementForItem(at: selectedIndexPath!)
-        
-        
-            imageTypeSelected = selectedIndexPath![1]
+        guard let selectedIndexPath = collectionView.indexPathForItem(at: sender.location(in: collectionView))
+            else {
+                return
+            }
+            collectionView.beginInteractiveMovementForItem(at: selectedIndexPath)
+            imageTypeSelected = selectedIndexPath[1]
         
         switch imageTypeSelected {
         case 0:
