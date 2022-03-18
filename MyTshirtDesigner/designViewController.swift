@@ -58,8 +58,6 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.tag = 0
-        imagedesign.isUserInteractionEnabled = true
-        collectionView.isUserInteractionEnabled = true
 //        let tapRecognizer = UIPinchGestureRecognizer(target:self, action:#selector(detectTap))
 //        self.view.addGestureRecognizer(tapRecognizer)
 //
@@ -84,14 +82,14 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
       //  view.addSubview(scrollView)
         
         for i in 0...100 {
-             
+
             images.append(UIImageView(image: UIImage(systemName: "person.3.fill")))
              images[i].frame = CGRect(x: 0, y: UIScreen.main.bounds.height*CGFloat(i), width: view.frame.width, height: view.frame.height)
              images[i].contentMode = .scaleAspectFit
              collectionView.addSubview(images[i])
-            
-            
-            
+
+
+
            }
 
         var tshirtTitle = myTextField.text!
@@ -426,6 +424,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                 return
             }
             collectionView.beginInteractiveMovementForItem(at: selectedIndexPath)
+            
             imageTypeSelected = selectedIndexPath[1]
         
         switch imageTypeSelected {
