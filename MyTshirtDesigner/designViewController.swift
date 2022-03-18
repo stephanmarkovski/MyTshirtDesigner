@@ -58,13 +58,15 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.tag = 0
-        imagedesign.isUserInteractionEnabled
+        imagedesign.isUserInteractionEnabled = true
+        collectionView.isUserInteractionEnabled = true
 //        let tapRecognizer = UIPinchGestureRecognizer(target:self, action:#selector(detectTap))
 //        self.view.addGestureRecognizer(tapRecognizer)
 //
        
 
-        let tap = UITapGestureRecognizer(target: self, action: Selector("handleTap:"))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.myTapGestureRecognizer(_:)))
+        
         tap.delegate = self
         collectionView.addGestureRecognizer(tap)
 
@@ -375,8 +377,8 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
 //
 //              }
         
-        let cell = selectedCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        for subView in cell.contentView.subviews {
+        let Cell = selectedCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        for subView in Cell.contentView.subviews {
             subView.removeFromSuperview()
         }
         
@@ -393,12 +395,11 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             }
         }
               
-     
 
         imageView.image = image
         
-        cell.contentView.addSubview(imageView)
-        return cell
+        Cell.contentView.addSubview(imageView)
+        return Cell
 }
     
     func createImage(_ image:UIImage?, _ location:CGRect) {
@@ -420,11 +421,12 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         switch(sender.state) {
             
     case .began:
-         let selectedIndexPath = collectionView.indexPathForItem(at: sender.location(in: collectionView))
-            collectionView.beginInteractiveMovementForItem(at: selectedIndexPath!)
-        
-        
-            imageTypeSelected = selectedIndexPath![1]
+        guard let selectedIndexPath = collectionView.indexPathForItem(at: sender.location(in: collectionView))
+            else {
+                return
+            }
+            collectionView.beginInteractiveMovementForItem(at: selectedIndexPath)
+            imageTypeSelected = selectedIndexPath[1]
         
         switch imageTypeSelected {
         case 0:
