@@ -11,7 +11,6 @@
 		AD54091227CFD91700257A7C /* ImageFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD54091127CFD91700257A7C /* ImageFile.swift */; };
 		F034E76427A06359002A34B5 /* designViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034E76327A06359002A34B5 /* designViewController.swift */; };
 		F034E76627A06731002A34B5 /* SavedTshirts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034E76527A06731002A34B5 /* SavedTshirts.swift */; };
-		F042C7A727E23765007CFE28 /* FULL FACE light background.png in Resources */ = {isa = PBXBuildFile; fileRef = F042C7A627E23765007CFE28 /* FULL FACE light background.png */; };
 		F856D2CE27A05BAB00931576 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F856D2CD27A05BAB00931576 /* AppDelegate.swift */; };
 		F856D2D027A05BAB00931576 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F856D2CF27A05BAB00931576 /* SceneDelegate.swift */; };
 		F856D2D227A05BAB00931576 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F856D2D127A05BAB00931576 /* ViewController.swift */; };
@@ -30,7 +29,6 @@
 		AD54091127CFD91700257A7C /* ImageFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFile.swift; sourceTree = "<group>"; };
 		F034E76327A06359002A34B5 /* designViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = designViewController.swift; sourceTree = "<group>"; };
 		F034E76527A06731002A34B5 /* SavedTshirts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTshirts.swift; sourceTree = "<group>"; };
-		F042C7A627E23765007CFE28 /* FULL FACE light background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "FULL FACE light background.png"; path = "Assets.xcassets/herseyImages/FULL FACE light background.imageset/FULL FACE light background.png"; sourceTree = "<group>"; };
 		F3E1FAC562DFFCE8864ABBD3 /* Pods-MyTshirtDesigner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTshirtDesigner.release.xcconfig"; path = "Target Support Files/Pods-MyTshirtDesigner/Pods-MyTshirtDesigner.release.xcconfig"; sourceTree = "<group>"; };
 		F856D2CA27A05BAB00931576 /* MyTshirtDesigner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTshirtDesigner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F856D2CD27A05BAB00931576 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -100,7 +98,6 @@
 				F856D2CD27A05BAB00931576 /* AppDelegate.swift */,
 				F856D2CF27A05BAB00931576 /* SceneDelegate.swift */,
 				F856D2DB27A05BAC00931576 /* Info.plist */,
-				F042C7A627E23765007CFE28 /* FULL FACE light background.png */,
 				F856D2D127A05BAB00931576 /* ViewController.swift */,
 				F034E76527A06731002A34B5 /* SavedTshirts.swift */,
 				F856D2D327A05BAB00931576 /* Main.storyboard */,
@@ -187,7 +184,6 @@
 				F856D2D727A05BAC00931576 /* Assets.xcassets in Resources */,
 				F8C6396D27CFD05400AA96A4 /* OLD SPORT 01 COLLEGE NCV.ttf in Resources */,
 				F856D2D527A05BAB00931576 /* Main.storyboard in Resources */,
-				F042C7A727E23765007CFE28 /* FULL FACE light background.png in Resources */,
 				F8807E2D27D2760700061222 /* Bebas.ttf in Resources */,
 				F8807E2B27D275D400061222 /* BrushScriptMTItalic.ttf in Resources */,
 			);

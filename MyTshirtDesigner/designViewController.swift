@@ -49,7 +49,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     var selectedFont = "OLD SPORT 01 COLLEGE NCV"
     var colorValue = UIColor(red: 255.0/255, green: 103.0/255, blue: 27.0/255, alpha: 1.0)
     var fontSelected = 0
-    
+    var initialCenter = CGPoint()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +59,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         collectionView.delegate = self
         collectionView.tag = 0
         imagedesign.isUserInteractionEnabled = true
+        labell.isUserInteractionEnabled = true
 //        let tapRecognizer = UIPinchGestureRecognizer(target:self, action:#selector(detectTap))
 //        self.view.addGestureRecognizer(tapRecognizer)
 //
@@ -67,8 +68,9 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         let tap = UITapGestureRecognizer(target: self, action: Selector("handleTap:"))
         tap.delegate = self
         collectionView.addGestureRecognizer(tap)
-
-
+        let drag = UIPanGestureRecognizer(target: self, action: #selector(self.dragGestureRecognizer(gestureRecognizer:)))
+        drag.delegate = self
+        imagedesign.addGestureRecognizer(drag)
         currentData = data
         currentSizes = dataSizes
         imagedesign.layer.masksToBounds = true
@@ -93,13 +95,26 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
            }
 
         var tshirtTitle = myTextField.text!
-        var name = myTextField.text!
         
         // Do any additional setup after loading the view.
         
         
     }
-    
+    @IBAction func dragGestureRecognizer( gestureRecognizer: UIPanGestureRecognizer) {
+        guard gestureRecognizer.view != nil else {return}
+        let piece = gestureRecognizer.view!
+        let translation = gestureRecognizer.translation(in: piece.superview)
+           if gestureRecognizer.state == .began {
+               self.initialCenter = piece.center
+    }
+        if gestureRecognizer.state != .cancelled {
+             // Add the X and Y translation to the view's original position.
+             let newCenter = CGPoint(x: initialCenter.x + translation.x, y: initialCenter.y + translation.y)
+             piece.center = newCenter
+        }else {
+            piece.center = initialCenter
+    }
+    }
     func fontAlert() {
         
         // #### Creates an Alert to Change the Template Background #### //
@@ -169,11 +184,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             self.present(textAlert, animated: true, completion: nil)
             
         }
-   
-//    @objc func detectTap(_ gestureRecognizer : (UITapGestureRecognizer) {
-//////        gestureRecognizer.touchesBegan(Set<UITouch>, with: UIEvent)
-//    }
-    
+
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
        
         // #### Number of Sections in PickerView #### //

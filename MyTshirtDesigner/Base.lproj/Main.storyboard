@@ -179,6 +179,10 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="x0I-SA-BkS"/>
                         <color key="backgroundColor" systemColor="systemGrayColor"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="5Vw-9k-Tcc" appends="YES" id="sMj-bh-m7h"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="Xgm-7G-Gog">
                         <nil key="title"/>
@@ -209,6 +213,11 @@
                         <action selector="myTapGestureRecognizer:" destination="IoV-xp-8en" id="qfY-9Z-UaP"/>
                     </connections>
                 </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="5Vw-9k-Tcc">
+                    <connections>
+                        <action selector="dragGestureRecognizer:" destination="IoV-xp-8en" id="V84-4K-zO9"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1581.9512195121952" y="67.627118644067806"/>
         </scene>
