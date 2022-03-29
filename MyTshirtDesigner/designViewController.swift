@@ -444,7 +444,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        createImage((currentData[indexPath.row]), CGRect(x: 300, y: 200, width: currentSizes[indexPath.row].width, height: currentSizes[indexPath.row].height))
+        createImage((currentData[indexPath.row]), CGRect(x: 100, y: 100, width: currentSizes[indexPath.row].width, height: currentSizes[indexPath.row].height))
         
         
         //next add methods to make image movable in app
