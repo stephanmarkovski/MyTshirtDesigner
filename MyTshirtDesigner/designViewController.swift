@@ -13,7 +13,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
   
     
     
-
+// variables to use
     @IBOutlet weak var labell: UILabel!
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -80,11 +80,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         imagedesign.layer.borderColor = UIColor.white.cgColor
         imagedesign.layer.cornerRadius = imagedesign.bounds.width / 2
         
-      //  scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
-      //  scrollView.backgroundColor = .systemTeal
-      //  scrollView.contentSize = CGSize(width: scrollView.contentSize.width, height: UIScreen.main.bounds.height*100)
-      //  view.addSubview(scrollView)
-        
+     // making image appear
         for i in 0...100 {
 
             images.append(UIImageView(image: UIImage(systemName: "person.3.fill")))
@@ -96,12 +92,13 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
 
            }
 
-        var tshirtTitle = myTextField.text!
         
-        // Do any additional setup after loading the view.
+        
         
         
     }
+    //dragGestureReconginzer code
+    
     @IBAction func dragGestureRecognizer( gestureRecognizer: UIPanGestureRecognizer) {
         guard gestureRecognizer.view != nil else {return}
         let piece = gestureRecognizer.view!
@@ -116,7 +113,9 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         }else {
             piece.center = initialCenter
     }
+        
     }
+    //Alert for font
     func fontAlert() {
         
         // #### Creates an Alert to Change the Template Background #### //
@@ -144,7 +143,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         textAlert.addTextField { (textField : UITextField!) -> Void in
             textField.placeholder = "Enter Size"
         }
-       
+       // save  alert
         let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: { [self] alert -> Void in
             let addedText = textAlert.textFields?[0].text
             let addedSize = textAlert.textFields?[1].text
@@ -186,14 +185,14 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             self.present(textAlert, animated: true, completion: nil)
             
         }
-
+// Pickerview components
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
        
         // #### Number of Sections in PickerView #### //
         
         return 1
     }
-    
+    //pickerview number of rows
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
        
         // #### Determin the Number of Components in the PickerView #### //
@@ -208,7 +207,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         }
         
     }
-    
+    //pickerview for color font etc
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
        
         // #### Determin the Components in the PickerView #### //
@@ -223,7 +222,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         }
         
     }
-    
+    //pickerview selecting rows and colors w fonts etc
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         // #### Testfor the Selected Row in the CollectionView #### //
@@ -301,24 +300,24 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                 }
         }
     }
-    
+    // edit button code
         @IBAction func editbutton(_ sender: UIBarButtonItem) {
         imagedesign.image = UIImage()
             labell.text = ""
     }
-    
+    // template button
     @IBAction func TemplateButton(_ sender: Any) {
         
          tempSelected = 0
         tempAlert()
         
     }
-   
+   // font button
     @IBAction func myFontButtonFr(_ sender: Any) {
         fontAlert()
         
     }
-    
+    // template alert
     func tempAlert() {
         
         // #### Creates an Alert to Change the Template Background #### //
@@ -358,7 +357,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         self.present(textAlert, animated: true, completion: nil)
         
     }
-   
+   // variables for using
     var currentData: [UIImage] = []
     var currentSizes: [CGSize] = []
     
@@ -378,7 +377,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         return 1
         
     }
-    
+    // collectionview number of items
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         // #### Determin the Number of Components in the CollectionView #### //
@@ -403,7 +402,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
        
         return 0
     }
-    
+    // collection view cellsforitem
     func collectionView(_ selectedCollectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
 //              if selectedCollectionView.tag == 0 {
@@ -434,7 +433,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         Cell.contentView.addSubview(imageView)
         return Cell
 }
-    
+    // collectionview creating an image
     func createImage(_ image:UIImage?, _ location:CGRect) {
         
         let imageView = ImageFile(image: image, From: self, frame: location, collectionViewSize: collectionView.frame)
@@ -442,13 +441,14 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         self.view.addSubview(imageView)
     }
     
-    
+    // collectionview selected items
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         createImage((currentData[indexPath.row]), CGRect(x: 100, y: 100, width: currentSizes[indexPath.row].width, height: currentSizes[indexPath.row].height))
         
         
         //next add methods to make image movable in app
     }
+    // tap gesture for collection view to appear
     @IBAction func myTapGestureRecognizer(_ sender: UIGestureRecognizer) {
       
         switch(sender.state) {
@@ -483,7 +483,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             break
         }
         
-            
+        // break solution
             collectionView.reloadData()
             
         case .possible:
