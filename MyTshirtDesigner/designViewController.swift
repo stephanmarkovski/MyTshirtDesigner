@@ -80,14 +80,10 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         imagedesign.layer.borderColor = UIColor.white.cgColor
         imagedesign.layer.cornerRadius = imagedesign.bounds.width / 2
         
-//        labell.addGestureRecognizer(drag)
-//        labell.translatesAutoresizingMaskIntoConstraints = false
+        labell.addGestureRecognizer(drag)
 //
-//               labell.center = view.center
-      //  scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
-      //  scrollView.backgroundColor = .systemTeal
-      //  scrollView.contentSize = CGSize(width: scrollView.contentSize.width, height: UIScreen.main.bounds.height*100)
-      //  view.addSubview(scrollView)
+               labell.center = view.center
+      
         
      // making image appear
         for i in 0...100 {
