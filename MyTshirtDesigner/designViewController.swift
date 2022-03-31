@@ -112,7 +112,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         labell.translatesAutoresizingMaskIntoConstraints = false
         switch gestureRecognizer.state {
            case .began:
-               initialCenter = labell.center
+               print("started")
             
            case .changed:
                let translation = gestureRecognizer.translation(in: view)
