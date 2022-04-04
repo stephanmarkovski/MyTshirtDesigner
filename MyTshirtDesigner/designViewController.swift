@@ -33,7 +33,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     var y = Double()
     var rotation = Double()
     var color = UIColor()
-    var center = CGPoint(x: 0, y: 0)
+    var center = CGPoint(x: 400, y: 500)
     
     var pickerView = UIPickerView()
     var tempSelected = 0
@@ -49,7 +49,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     var selectedFont = "OLD SPORT 01 COLLEGE NCV"
     var colorValue = UIColor(red: 255.0/255, green: 103.0/255, blue: 27.0/255, alpha: 1.0)
     var fontSelected = 0
-    private var initialCenter: CGPoint = CGPoint(x: 400, y: 500)
+    private var initialCenter: CGPoint = CGPoint(x: 300, y: 400)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,15 +79,11 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         imagedesign.layer.borderWidth = 1.5
         imagedesign.layer.borderColor = UIColor.white.cgColor
         imagedesign.layer.cornerRadius = imagedesign.bounds.width / 2
-        view.addSubview(labell)
+        
         labell.addGestureRecognizer(drag)
-        labell.translatesAutoresizingMaskIntoConstraints = false
-
+//
                labell.center = view.center
-      //  scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
-      //  scrollView.backgroundColor = .systemTeal
-      //  scrollView.contentSize = CGSize(width: scrollView.contentSize.width, height: UIScreen.main.bounds.height*100)
-      //  view.addSubview(scrollView)
+      
         
      // making image appear
         for i in 0...100 {
@@ -106,14 +102,14 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         
         
     }
-   
+   // Draggesture code
     @IBAction func dragGestureRecognizer( gestureRecognizer: UIPanGestureRecognizer) {
         labell.center = gestureRecognizer.location(in: view)
         labell.translatesAutoresizingMaskIntoConstraints = false
         switch gestureRecognizer.state {
            case .began:
                initialCenter = labell.center
-            
+
            case .changed:
                let translation = gestureRecognizer.translation(in: view)
 
