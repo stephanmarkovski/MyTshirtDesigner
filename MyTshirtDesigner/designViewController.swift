@@ -68,7 +68,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
        
 
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.myTapGestureRecognizer(_:)))
-        
+    
         tap.delegate = self
         collectionView.addGestureRecognizer(tap)
         let drag = UIPanGestureRecognizer(target: self, action: #selector(self.dragGestureRecognizer(gestureRecognizer:)))
