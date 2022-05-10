@@ -98,9 +98,6 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
            }
 
         
-        
-        
-        
     }
    // Draggesture code
     @IBAction func dragGestureRecognizer( gestureRecognizer: UIPanGestureRecognizer) {
@@ -226,6 +223,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         }
         
     }
+    
     //pickerview selecting rows and colors w fonts etc
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
