@@ -515,8 +515,8 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
 
     }
     func addMyTapGestureRecognizer() {
-           let pan = UIPanGestureRecognizer(target: self, action: #selector(myDoubleTap(_:)))
-           self.view.addGestureRecognizer(pan)
+//           let pan = UIPanGestureRecognizer(target: self, action: #selector(myDoubleTap(_:)))
+//           self.view.addGestureRecognizer(pan)
 
 }
 
