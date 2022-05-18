@@ -504,9 +504,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         }
     
     }
-    @IBAction func deleteGesture(_ sender: UITapGestureRecognizer) {
-        
-    }
+ 
     
 }
 

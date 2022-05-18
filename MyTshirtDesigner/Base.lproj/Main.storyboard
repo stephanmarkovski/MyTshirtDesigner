@@ -208,7 +208,6 @@
                         <gestureRecognizers/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="5Vw-9k-Tcc" appends="YES" id="sMj-bh-m7h"/>
-                            <outletCollection property="gestureRecognizers" destination="fhC-3S-DWC" appends="YES" id="Lra-sE-CaV"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="Xgm-7G-Gog">
@@ -245,11 +244,6 @@
                         <action selector="dragGestureRecognizer:" destination="IoV-xp-8en" id="V84-4K-zO9"/>
                     </connections>
                 </panGestureRecognizer>
-                <tapGestureRecognizer numberOfTouchesRequired="2" id="fhC-3S-DWC">
-                    <connections>
-                        <action selector="deleteGesture:" destination="IoV-xp-8en" id="dtB-p4-FhM"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1581.9512195121952" y="67.627118644067806"/>
         </scene>
