@@ -180,9 +180,6 @@
                                         <gestureRecognizers/>
                                     </collectionViewCell>
                                 </cells>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="t6z-Lw-bPo" appends="YES" id="fJC-Aa-TaL"/>
-                                </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vqa-2S-I2S">
                                 <rect key="frame" x="596" y="67" width="224" height="39"/>
@@ -234,11 +231,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gTo-QM-jWE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="t6z-Lw-bPo">
-                    <connections>
-                        <action selector="myTapGestureRecognizer:" destination="IoV-xp-8en" id="qfY-9Z-UaP"/>
-                    </connections>
-                </tapGestureRecognizer>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="5Vw-9k-Tcc">
                     <connections>
                         <action selector="dragGestureRecognizer:" destination="IoV-xp-8en" id="V84-4K-zO9"/>
