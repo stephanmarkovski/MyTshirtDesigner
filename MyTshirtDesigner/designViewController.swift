@@ -438,7 +438,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     // collectionview creating an image
     func createImage(_ image:UIImage?, _ location:CGRect) {
         
-      //  let imageView = ImageFile(image: image, From: self, frame: location, collectionViewSize: collectionView.frame)
+        let imageView = ImageFile(image: image, From: self, frame: location, collectionViewSize: collectionView.frame)
         
         self.view.addSubview(imageView)
         
