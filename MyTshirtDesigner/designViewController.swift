@@ -12,7 +12,6 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
   
     
-    
 // variables to use
     @IBOutlet weak var labell: UILabel!
     
@@ -508,7 +507,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         }
     
     }
-    @IBAction func myDoubleTap(_ sender: UITapGestureRecognizer) {
+    @IBAction func deleteGesture(_ sender: UITapGestureRecognizer) {
         
 
           guard let selectedImageView = selectedImageView else {
