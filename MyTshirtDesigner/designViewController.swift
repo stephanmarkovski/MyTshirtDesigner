@@ -12,7 +12,6 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
   
     
-    
 // variables to use
     @IBOutlet weak var labell: UILabel!
     
@@ -504,6 +503,9 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             break
         }
     
+    }
+    @IBAction func deleteGesture(_ sender: UITapGestureRecognizer) {
+        
     }
     
 }

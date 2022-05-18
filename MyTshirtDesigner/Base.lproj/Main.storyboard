@@ -208,6 +208,7 @@
                         <gestureRecognizers/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="5Vw-9k-Tcc" appends="YES" id="sMj-bh-m7h"/>
+                            <outletCollection property="gestureRecognizers" destination="fhC-3S-DWC" appends="YES" id="Lra-sE-CaV"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="Xgm-7G-Gog">
@@ -218,17 +219,12 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <rightBarButtonItems>
-                            <barButtonItem title="Clear Shirt" id="4St-V7-IQg">
-                                <color key="tintColor" name="AccentColor"/>
-                                <connections>
-                                    <action selector="editbutton:" destination="IoV-xp-8en" id="yoY-op-h0I"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="compose" id="Vjx-pB-c9d">
-                                <color key="tintColor" name="AccentColor"/>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="Clear Shirt" id="4St-V7-IQg">
+                            <color key="tintColor" name="AccentColor"/>
+                            <connections>
+                                <action selector="editbutton:" destination="IoV-xp-8en" id="yoY-op-h0I"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="f6i-fH-LnZ" id="Di1-2i-Ldl"/>
@@ -249,6 +245,11 @@
                         <action selector="dragGestureRecognizer:" destination="IoV-xp-8en" id="V84-4K-zO9"/>
                     </connections>
                 </panGestureRecognizer>
+                <tapGestureRecognizer numberOfTouchesRequired="2" id="fhC-3S-DWC">
+                    <connections>
+                        <action selector="deleteGesture:" destination="IoV-xp-8en" id="dtB-p4-FhM"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1581.9512195121952" y="67.627118644067806"/>
         </scene>
@@ -374,10 +375,10 @@
             </objects>
             <point key="canvasLocation" x="2309" y="803"/>
         </scene>
-        <!--View Controller-->
+        <!--Saved Tshirts-->
         <scene sceneID="cYQ-Kp-5ym">
             <objects>
-                <viewController id="vYo-eH-iCn" sceneMemberID="viewController">
+                <viewController id="vYo-eH-iCn" customClass="SavedTshirts" customModule="MyTshirtDesigner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="p8M-rs-7fh">
                         <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -409,7 +410,13 @@
                             <constraint firstItem="xA1-fv-iqV" firstAttribute="leading" secondItem="53s-hM-7JQ" secondAttribute="leading" id="zWV-6r-Sj9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="suu-oJ-QkU"/>
+                    <navigationItem key="navigationItem" id="suu-oJ-QkU">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="kEc-JR-aLf">
+                            <connections>
+                                <action selector="exportButton:" destination="vYo-eH-iCn" id="gAA-XA-rVA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7TY-aN-ZjZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
