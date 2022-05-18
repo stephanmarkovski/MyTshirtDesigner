@@ -10,8 +10,11 @@ import UIKit
 class designViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UIGestureRecognizerDelegate {
    
     
-  
-    
+    let stickers: [UIImage] = [
+        UIImage(named: "FULL FACE dark background")!,
+        UIImage(named: "JUST THE H")!,
+        UIImage(named: "stripes face")!,
+    ]
     
 // variables to use
     @IBOutlet weak var labell: UILabel!
@@ -86,16 +89,16 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
       
         
      // making image appear
-        for i in 0...100 {
-
-            images.append(UIImageView(image: UIImage(systemName: "person.3.fill")))
-             images[i].frame = CGRect(x: 0, y: UIScreen.main.bounds.height*CGFloat(i), width: view.frame.width, height: view.frame.height)
-             images[i].contentMode = .scaleAspectFit
-             collectionView.addSubview(images[i])
-
-
-
-           }
+//        for i in 0...100 {
+//
+//            images.append(UIImageView(image: UIImage(systemName: "person.3.fill")))
+//             images[i].frame = CGRect(x: 0, y: UIScreen.main.bounds.height*CGFloat(i), width: view.frame.width, height: view.frame.height)
+//             images[i].contentMode = .scaleAspectFit
+//             collectionView.addSubview(images[i])
+//
+//
+//
+//           }
 
         
     }
@@ -366,7 +369,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     let data: [UIImage] = [#imageLiteral(resourceName: "FULL FACE dark background"),#imageLiteral(resourceName: "JUST THE H"),#imageLiteral(resourceName: "PRIMARY LOGO dark background"),#imageLiteral(resourceName: "stripes face")]
     let dataSizes: [CGSize] = [CGSize(width: 100, height: 100),CGSize(width: 100, height: 100),CGSize(width: 144, height: 100),CGSize(width: 180, height: 75)]
     
-    let huskyFaces: [UIImage] = [#imageLiteral(resourceName: "FULL FACE brown_white"),#imageLiteral(resourceName: "FULL FACE dark background"),#imageLiteral(resourceName: "FULL FACE light background"),#imageLiteral(resourceName: "FULL FACE orange"),#imageLiteral(resourceName: "FULL FACE white")]
+    var huskyFaces: [UIImage] = [#imageLiteral(resourceName: "FULL FACE brown_white"),#imageLiteral(resourceName: "FULL FACE dark background"),#imageLiteral(resourceName: "FULL FACE light background"),#imageLiteral(resourceName: "FULL FACE orange"),#imageLiteral(resourceName: "FULL FACE white")]
     let huskyFaceSizes: [CGSize] = [CGSize(width: 100, height: 100),CGSize(width: 100, height: 100),CGSize(width: 100, height: 100),CGSize(width: 100, height: 100),CGSize(width: 100, height: 100)]
     let herseyHs: [UIImage] = [#imageLiteral(resourceName: "JUST THE H"),#imageLiteral(resourceName: "JUST THE H2"),#imageLiteral(resourceName: "H DOG"),#imageLiteral(resourceName: "LOCKUP")]
     let herseyHSizes: [CGSize] = [CGSize(width: 100, height: 100),CGSize(width: 100, height: 100),CGSize(width: 100, height: 100),CGSize(width: 100, height: 100)]
@@ -386,7 +389,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         
         if collectionView.tag == 0 {
             return data.count
-        } else if collectionView.tag == 1{
+        } else if collectionView.tag == 1 {
             switch imageTypeSelected {
             case 0:
                 return huskyFaces.count
@@ -406,19 +409,17 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     }
     // collection view cellsforitem
     func collectionView(_ selectedCollectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-//              if selectedCollectionView.tag == 0 {
-//
-//              }
-        
+
         let Cell = selectedCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         for subView in Cell.contentView.subviews {
             subView.removeFromSuperview()
         }
         
+        
         let image: UIImage = currentData[indexPath.row]
         
-        var imageView:UIImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        
+        var imageView:UIImageView = UIImageView(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
 //                    var imageView:UIImageView=UIImageView(frame: CGRect(x: 0, y: 0, width: dataSizes[indexPath.row].width, height: dataSizes[indexPath.row].height))
         layout.itemSize = CGSize(width: currentSizes[indexPath.row].width, height: 100)
         for _ in currentSizes {
@@ -428,10 +429,10 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                 imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: currentSizes[indexPath.row].width, height: currentSizes[indexPath.row].height))
             }
         }
-              
-
-        imageView.image = image
+       
         
+        imageView.image = image
+
         Cell.contentView.addSubview(imageView)
         return Cell
 }
@@ -441,23 +442,26 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         let imageView = ImageFile(image: image, From: self, frame: location, collectionViewSize: collectionView.frame)
         
         self.view.addSubview(imageView)
+        
     }
     
     // collectionview selected items
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        createImage((currentData[indexPath.row]), CGRect(x: 100, y: 100, width: currentSizes[indexPath.row].width, height: currentSizes[indexPath.row].height))
         
+        createImage((currentData[indexPath.row]), CGRect(x: 300, y: 200, width: currentSizes[indexPath.row].width, height: currentSizes[indexPath.row].height))
+      
         
         //next add methods to make image movable in app
     }
+    
+    
     // tap gesture for collection view to appear
-    @IBAction func myTapGestureRecognizer(_ sender: UIGestureRecognizer) {
+    @objc func myTapGestureRecognizer(_ sender: UIGestureRecognizer) {
       
         switch(sender.state) {
             
     case .began:
-        guard let selectedIndexPath = collectionView.indexPathForItem(at: sender.location(in: collectionView))
-            else {
+        guard let selectedIndexPath = collectionView.indexPathForItem(at: sender.location(in: collectionView)) else {
                 return
             }
             collectionView.beginInteractiveMovementForItem(at: selectedIndexPath)
@@ -503,8 +507,13 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         }
     
     }
-    
 }
 
-
-
+extension UIImage {
+    
+    var toData: Data? {
+        //        var one = herseyHs[0].pngData()
+        //        tempImage.image = UIImage(data:one! ,scale:1.0)
+        return self.pngData()
+    }
+}
