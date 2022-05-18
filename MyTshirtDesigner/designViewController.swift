@@ -67,10 +67,6 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
      
        
 
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.myTapGestureRecognizer(_:)))
-    
-        tap.delegate = self
-        collectionView.addGestureRecognizer(tap)
         let drag = UIPanGestureRecognizer(target: self, action: #selector(self.dragGestureRecognizer(gestureRecognizer:)))
         drag.delegate = self
         currentData = data
@@ -453,94 +449,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         //next add methods to make image movable in app
     }
     
-    
-    // tap gesture for collection view to appear
-    @objc func myTapGestureRecognizer(_ sender: UIGestureRecognizer) {
-      
-        switch(sender.state) {
-            
-    case .began:
-        guard let selectedIndexPath = collectionView.indexPathForItem(at: sender.location(in: collectionView)) else {
-                return
-            }
-            collectionView.beginInteractiveMovementForItem(at: selectedIndexPath)
-            
-            imageTypeSelected = selectedIndexPath[1]
-        
-        switch imageTypeSelected {
-        case 0:
-            currentSizes = huskyFaceSizes
-            currentData = huskyFaces
-            break
-        case 1:
-            currentSizes = herseyHSizes
-            currentData = herseyHs
-            break
-        case 2:
-            currentSizes = herseyLogoSizes
-            currentData = herseyLogo
-            break
-        case 3:
-            currentSizes = herseyStripeSizes
-            currentData = herseyStripes
-            break
-        default:
-            break
-        }
-        
-        // break solution
-            collectionView.reloadData()
-            
-        case .possible:
-            break
-        case .changed:
-            break
-        case .ended:
-            break
-        case .cancelled:
-            break
-        case .failed:
-            break
-        @unknown default:
-            break
-        }
-    
-    }
-    @IBAction func deleteGesture(_ sender: UITapGestureRecognizer) {
-        
-
-          guard let selectedImageView = selectedImageView else {
-              return
-
-    }
-    func addMyTapGestureRecognizer() {
-//           let pan = UIPanGestureRecognizer(target: self, action: #selector(myDoubleTap(_:)))
-//           self.view.addGestureRecognizer(pan)
-
 }
-
-          
-               
-        switch sender.state {
-         //      case .changed, .ended:
-      //      selectedImageView.center = selectedImageView.center.offset(by: sender.translation(in: self.view))
-         //          sender.setTranslation(CGPoint.zero, in: self.view)
-               default:
-                   break
-
-        }
-    
-
-    }
-}
-extension CGPoint {
-    func offset(by point: CGPoint) -> CGPoint {
-        return CGPoint(x: self.x + point.x, y: self.y + point.y)
-    }
-}
-
-
-
 
 
 extension UIImage {

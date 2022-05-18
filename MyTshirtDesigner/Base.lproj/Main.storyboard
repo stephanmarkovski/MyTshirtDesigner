@@ -164,20 +164,21 @@
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Kgi-sd-Ajo">
-                                    <size key="itemSize" width="72" height="70"/>
+                                    <size key="itemSize" width="93" height="82"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="cell" id="gbl-sP-kvk">
-                                        <rect key="frame" x="0.0" y="0.0" width="72" height="70"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="93" height="82"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="1wj-eG-WzW">
-                                            <rect key="frame" x="0.0" y="0.0" width="72" height="70"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="93" height="82"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
                                         <gestureRecognizers/>
+                                        <size key="customSize" width="93" height="82"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
