@@ -114,6 +114,9 @@
                                 <rect key="frame" x="330" y="1075" width="163" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" selected="YES" allowsDirectInteraction="YES" causesPageTurn="YES"/>
+                                </accessibility>
                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Save">
@@ -123,11 +126,8 @@
                                     <fontDescription key="titleFontDescription" type="italicSystem" pointSize="50"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="saveButtonAction:" destination="IoV-xp-8en" eventType="touchUpInside" id="yAK-Yk-Beu"/>
-                                    <segue destination="vYo-eH-iCn" kind="show" id="9bL-8o-tNh">
-                                        <segue key="commit" inheritsFrom="parent" id="8uF-bA-Bvh"/>
-                                        <segue key="preview" inheritsFrom="commit" id="id4-Mk-BNN"/>
-                                    </segue>
+                                    <action selector="saveButton:" destination="IoV-xp-8en" eventType="touchUpInside" id="bPV-iN-81C"/>
+                                    <segue destination="vYo-eH-iCn" kind="show" identifier="" id="9bL-8o-tNh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Fw-iI-wG8">
@@ -205,6 +205,7 @@
                         <gestureRecognizers/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="5Vw-9k-Tcc" appends="YES" id="sMj-bh-m7h"/>
+                            <outletCollection property="gestureRecognizers" destination="TPS-eo-uqK" appends="YES" id="rD0-nL-L2E"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="Xgm-7G-Gog">
@@ -238,9 +239,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gTo-QM-jWE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="5Vw-9k-Tcc">
                     <connections>
-                        <action selector="dragGestureRecognizer:" destination="IoV-xp-8en" id="V84-4K-zO9"/>
+                        <action selector="dragGestureRecognizerWithGestureRecognizer:" destination="IoV-xp-8en" id="IG6-vo-44H"/>
                     </connections>
                 </panGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="TPS-eo-uqK">
+                    <connections>
+                        <action selector="myDoubleTap:" destination="IoV-xp-8en" id="PZK-o2-Icw"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1581.9512195121952" y="67.627118644067806"/>
         </scene>
@@ -252,18 +258,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YeR-Mp-rb9">
-                                <rect key="frame" x="273" y="46" width="515" height="178"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                <color key="tintColor" systemColor="systemYellowColor"/>
-                                <string key="text">1.) Click Design Your T-Shirt to bring you to the design Your shirt page. This will allow you to customize your shirt to your liking! </string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4.) This is the page Where you will create your T-shirt and select the Custom texts, T-shirt template, color, images, and more!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCa-8M-SCN">
-                                <rect key="frame" x="273" y="438" width="515" height="109"/>
+                                <rect key="frame" x="273" y="460" width="515" height="87"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -341,6 +337,16 @@
                                 <rect key="frame" x="12" y="438" width="240" height="370"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YeR-Mp-rb9">
+                                <rect key="frame" x="273" y="121" width="515" height="101"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <color key="tintColor" systemColor="systemYellowColor"/>
+                                <string key="text">1.) Click Design Your T-Shirt to bring you to the design Your shirt page. This will allow you to customize your shirt to your liking! </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ov2-NS-p4i"/>
                         <color key="backgroundColor" systemColor="systemGrayColor"/>
@@ -366,10 +372,10 @@
             </objects>
             <point key="canvasLocation" x="2309" y="803"/>
         </scene>
-        <!--View Controller-->
+        <!--Saved Designs View Controller-->
         <scene sceneID="cYQ-Kp-5ym">
             <objects>
-                <viewController id="vYo-eH-iCn" sceneMemberID="viewController">
+                <viewController id="vYo-eH-iCn" customClass="SavedDesignsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="p8M-rs-7fh">
                         <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

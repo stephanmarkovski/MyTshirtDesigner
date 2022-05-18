@@ -10,11 +10,7 @@ import UIKit
 class designViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UIGestureRecognizerDelegate {
    
     
-    let stickers: [UIImage] = [
-        UIImage(named: "FULL FACE dark background")!,
-        UIImage(named: "JUST THE H")!,
-        UIImage(named: "stripes face")!,
-    ]
+  
     
 // variables to use
     @IBOutlet weak var labell: UILabel!
@@ -23,8 +19,9 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     var text = String()
     var font = UIFont()
     var textcolor = UIColor()
-    
-    @IBOutlet weak var myTextLabel: UILabel!
+    var selectedImageView: UIImageView?
+
+   
     var lastLocation = CGPoint(x: 0, y: 0)
     var lastRotation: CGFloat = 0.000001
     var lastScale:CGFloat = 0
@@ -322,6 +319,8 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         fontAlert()
         
     }
+    @IBAction func saveButton(_ sender: Any) {
+    }
     // template alert
     func tempAlert() {
         
@@ -439,7 +438,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     // collectionview creating an image
     func createImage(_ image:UIImage?, _ location:CGRect) {
         
-        let imageView = ImageFile(image: image, From: self, frame: location, collectionViewSize: collectionView.frame)
+      //  let imageView = ImageFile(image: image, From: self, frame: location, collectionViewSize: collectionView.frame)
         
         self.view.addSubview(imageView)
         
@@ -507,7 +506,42 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         }
     
     }
+    @IBAction func deleteGesture(_ sender: UITapGestureRecognizer) {
+        
+
+          guard let selectedImageView = selectedImageView else {
+              return
+
+    }
+    func addMyTapGestureRecognizer() {
+//           let pan = UIPanGestureRecognizer(target: self, action: #selector(myDoubleTap(_:)))
+//           self.view.addGestureRecognizer(pan)
+
 }
+
+          
+               
+        switch sender.state {
+         //      case .changed, .ended:
+      //      selectedImageView.center = selectedImageView.center.offset(by: sender.translation(in: self.view))
+         //          sender.setTranslation(CGPoint.zero, in: self.view)
+               default:
+                   break
+
+        }
+    
+
+    }
+}
+extension CGPoint {
+    func offset(by point: CGPoint) -> CGPoint {
+        return CGPoint(x: self.x + point.x, y: self.y + point.y)
+    }
+}
+
+
+
+
 
 extension UIImage {
     
