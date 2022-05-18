@@ -19,8 +19,9 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     var text = String()
     var font = UIFont()
     var textcolor = UIColor()
-    
-    @IBOutlet weak var myTextLabel: UILabel!
+    var selectedImageView: UIImageView?
+
+   
     var lastLocation = CGPoint(x: 0, y: 0)
     var lastRotation: CGFloat = 0.000001
     var lastScale:CGFloat = 0
@@ -66,10 +67,6 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
      
        
 
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.myTapGestureRecognizer(_:)))
-    
-        tap.delegate = self
-        collectionView.addGestureRecognizer(tap)
         let drag = UIPanGestureRecognizer(target: self, action: #selector(self.dragGestureRecognizer(gestureRecognizer:)))
         drag.delegate = self
         currentData = data
@@ -85,20 +82,17 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
       
         
      // making image appear
-        for i in 0...100 {
+//        for i in 0...100 {
+//
+//            images.append(UIImageView(image: UIImage(systemName: "person.3.fill")))
+//             images[i].frame = CGRect(x: 0, y: UIScreen.main.bounds.height*CGFloat(i), width: view.frame.width, height: view.frame.height)
+//             images[i].contentMode = .scaleAspectFit
+//             collectionView.addSubview(images[i])
+//
+//
+//
+//           }
 
-            images.append(UIImageView(image: UIImage(systemName: "person.3.fill")))
-             images[i].frame = CGRect(x: 0, y: UIScreen.main.bounds.height*CGFloat(i), width: view.frame.width, height: view.frame.height)
-             images[i].contentMode = .scaleAspectFit
-             collectionView.addSubview(images[i])
-
-
-
-           }
-
-        
-        
-        
         
     }
    // Draggesture code
@@ -225,6 +219,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         }
         
     }
+    
     //pickerview selecting rows and colors w fonts etc
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
@@ -320,6 +315,8 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         fontAlert()
         
     }
+    @IBAction func saveButton(_ sender: Any) {
+    }
     // template alert
     func tempAlert() {
         
@@ -367,7 +364,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     let data: [UIImage] = [#imageLiteral(resourceName: "FULL FACE dark background"),#imageLiteral(resourceName: "JUST THE H"),#imageLiteral(resourceName: "PRIMARY LOGO dark background"),#imageLiteral(resourceName: "stripes face")]
     let dataSizes: [CGSize] = [CGSize(width: 100, height: 100),CGSize(width: 100, height: 100),CGSize(width: 144, height: 100),CGSize(width: 180, height: 75)]
     
-    let huskyFaces: [UIImage] = [#imageLiteral(resourceName: "FULL FACE brown_white"),#imageLiteral(resourceName: "FULL FACE dark background"),#imageLiteral(resourceName: "FULL FACE light background"),#imageLiteral(resourceName: "FULL FACE orange"),#imageLiteral(resourceName: "FULL FACE white")]
+    var huskyFaces: [UIImage] = [#imageLiteral(resourceName: "FULL FACE brown_white"),#imageLiteral(resourceName: "FULL FACE dark background"),#imageLiteral(resourceName: "FULL FACE light background"),#imageLiteral(resourceName: "FULL FACE orange"),#imageLiteral(resourceName: "FULL FACE white")]
     let huskyFaceSizes: [CGSize] = [CGSize(width: 100, height: 100),CGSize(width: 100, height: 100),CGSize(width: 100, height: 100),CGSize(width: 100, height: 100),CGSize(width: 100, height: 100)]
     let herseyHs: [UIImage] = [#imageLiteral(resourceName: "JUST THE H"),#imageLiteral(resourceName: "JUST THE H2"),#imageLiteral(resourceName: "H DOG"),#imageLiteral(resourceName: "LOCKUP")]
     let herseyHSizes: [CGSize] = [CGSize(width: 100, height: 100),CGSize(width: 100, height: 100),CGSize(width: 100, height: 100),CGSize(width: 100, height: 100)]
@@ -387,7 +384,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         
         if collectionView.tag == 0 {
             return data.count
-        } else if collectionView.tag == 1{
+        } else if collectionView.tag == 1 {
             switch imageTypeSelected {
             case 0:
                 return huskyFaces.count
@@ -407,19 +404,17 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     }
     // collection view cellsforitem
     func collectionView(_ selectedCollectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-//              if selectedCollectionView.tag == 0 {
-//
-//              }
-        
+
         let Cell = selectedCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         for subView in Cell.contentView.subviews {
             subView.removeFromSuperview()
         }
         
+        
         let image: UIImage = currentData[indexPath.row]
         
-        var imageView:UIImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        
+        var imageView:UIImageView = UIImageView(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
 //                    var imageView:UIImageView=UIImageView(frame: CGRect(x: 0, y: 0, width: dataSizes[indexPath.row].width, height: dataSizes[indexPath.row].height))
         layout.itemSize = CGSize(width: currentSizes[indexPath.row].width, height: 100)
         for _ in currentSizes {
@@ -429,10 +424,10 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                 imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: currentSizes[indexPath.row].width, height: currentSizes[indexPath.row].height))
             }
         }
-              
-
-        imageView.image = image
+       
         
+        imageView.image = image
+
         Cell.contentView.addSubview(imageView)
         return Cell
 }
@@ -442,67 +437,27 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         let imageView = ImageFile(image: image, From: self, frame: location, collectionViewSize: collectionView.frame)
         
         self.view.addSubview(imageView)
+        
     }
     
     // collectionview selected items
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        createImage((currentData[indexPath.row]), CGRect(x: 100, y: 100, width: currentSizes[indexPath.row].width, height: currentSizes[indexPath.row].height))
         
+        createImage((currentData[indexPath.row]), CGRect(x: 300, y: 200, width: currentSizes[indexPath.row].width, height: currentSizes[indexPath.row].height))
+      
         
         //next add methods to make image movable in app
     }
-    // tap gesture for collection view to appear
-    @IBAction func myTapGestureRecognizer(_ sender: UIGestureRecognizer) {
-      
-        switch(sender.state) {
-            
-    case .began:
-        guard let selectedIndexPath = collectionView.indexPathForItem(at: sender.location(in: collectionView))
-            else {
-                return
-            }
-            collectionView.beginInteractiveMovementForItem(at: selectedIndexPath)
-            
-            imageTypeSelected = selectedIndexPath[1]
-        
-        switch imageTypeSelected {
-        case 0:
-            currentSizes = huskyFaceSizes
-            currentData = huskyFaces
-            break
-        case 1:
-            currentSizes = herseyHSizes
-            currentData = herseyHs
-            break
-        case 2:
-            currentSizes = herseyLogoSizes
-            currentData = herseyLogo
-            break
-        case 3:
-            currentSizes = herseyStripeSizes
-            currentData = herseyStripes
-            break
-        default:
-            break
-        }
-        
-        // break solution
-            collectionView.reloadData()
-            
-        case .possible:
-            break
-        case .changed:
-            break
-        case .ended:
-            break
-        case .cancelled:
-            break
-        case .failed:
-            break
-        @unknown default:
-            break
-        }
     
+}
+
+
+extension UIImage {
+    
+    var toData: Data? {
+        //        var one = herseyHs[0].pngData()
+        //        tempImage.image = UIImage(data:one! ,scale:1.0)
+        return self.pngData()
     }
  
     
