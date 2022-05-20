@@ -159,13 +159,16 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             if labell == labell {
                 
                 
-                    labell.font = UIFont(name: selectedFont, size: sum!)
+                labell.font = UIFont(name: selectedFont, size: sum ?? 60)
+                       
                 labell.textColor = colorValue
                 
                 labell.text = "\(addedText!)"
-                
+           
             }
-
+                
+            
+                                       
             })
         
         textAlert.view.addSubview(pickerViewFont)
@@ -302,6 +305,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         @IBAction func editbutton(_ sender: UIBarButtonItem) {
         imagedesign.image = UIImage()
             labell.text = ""
+            
     }
     // template button
     @IBAction func TemplateButton(_ sender: Any) {
