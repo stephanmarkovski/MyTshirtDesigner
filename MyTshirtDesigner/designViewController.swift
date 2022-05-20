@@ -21,7 +21,8 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     var textcolor = UIColor()
     var selectedImageView: UIImageView?
 
-   
+    var image: UIImage = UIImage()
+
     var lastLocation = CGPoint(x: 0, y: 0)
     var lastRotation: CGFloat = 0.000001
     var lastScale:CGFloat = 0
@@ -34,7 +35,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     var rotation = Double()
     var color = UIColor()
     var center = CGPoint(x: 400, y: 500)
-    
+    var imageView:UIImageView = UIImageView(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
     var pickerView = UIPickerView()
     var tempSelected = 0
     var layout:UICollectionViewFlowLayout!
@@ -302,7 +303,8 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         @IBAction func editbutton(_ sender: UIBarButtonItem) {
         imagedesign.image = UIImage()
             labell.text = ""
-    }
+            
+        }
     // template button
     @IBAction func TemplateButton(_ sender: Any) {
         
@@ -361,7 +363,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     var currentData: [UIImage] = []
     var currentSizes: [CGSize] = []
     
-    let data: [UIImage] = [#imageLiteral(resourceName: "FULL FACE dark background"),#imageLiteral(resourceName: "JUST THE H"),#imageLiteral(resourceName: "PRIMARY LOGO dark background"),#imageLiteral(resourceName: "stripes face")]
+    var data: [UIImage] = [#imageLiteral(resourceName: "FULL FACE dark background"),#imageLiteral(resourceName: "JUST THE H"),#imageLiteral(resourceName: "PRIMARY LOGO dark background"),#imageLiteral(resourceName: "stripes face")]
     let dataSizes: [CGSize] = [CGSize(width: 100, height: 100),CGSize(width: 100, height: 100),CGSize(width: 144, height: 100),CGSize(width: 180, height: 75)]
     
     var huskyFaces: [UIImage] = [#imageLiteral(resourceName: "FULL FACE brown_white"),#imageLiteral(resourceName: "FULL FACE dark background"),#imageLiteral(resourceName: "FULL FACE light background"),#imageLiteral(resourceName: "FULL FACE orange"),#imageLiteral(resourceName: "FULL FACE white")]
@@ -411,10 +413,10 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         }
         
         
-        let image: UIImage = currentData[indexPath.row]
-        
-        
-        var imageView:UIImageView = UIImageView(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
+       
+         image = currentData[indexPath.row]
+
+       
 //                    var imageView:UIImageView=UIImageView(frame: CGRect(x: 0, y: 0, width: dataSizes[indexPath.row].width, height: dataSizes[indexPath.row].height))
         layout.itemSize = CGSize(width: currentSizes[indexPath.row].width, height: 100)
         for _ in currentSizes {
@@ -430,8 +432,10 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
 
         Cell.contentView.addSubview(imageView)
         return Cell
+       
 }
     // collectionview creating an image
+    
     func createImage(_ image:UIImage?, _ location:CGRect) {
         
         let imageView = ImageFile(image: image, From: self, frame: location, collectionViewSize: collectionView.frame)
@@ -439,11 +443,11 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         self.view.addSubview(imageView)
         
     }
-    
+   
     // collectionview selected items
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        createImage((currentData[indexPath.row]), CGRect(x: 300, y: 200, width: currentSizes[indexPath.row].width, height: currentSizes[indexPath.row].height))
+        createImage((currentData[indexPath.row]), CGRect(x: 500, y: 400, width: currentSizes[indexPath.row].width, height: currentSizes[indexPath.row].height))
       
         
         //next add methods to make image movable in app
