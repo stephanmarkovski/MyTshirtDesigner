@@ -149,12 +149,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             self.labell.text = addedText
             
             let sum = Double(addedSize!)
-//            if selectedFont == fontChoices[0] {
-//
-//                labell.font = UIFont(name: "OLD SPORT 01 COLLEGE NCV", size: 50)
-//
-//                labell.text = "\(addedText!)"
-//            }
+
             
             if labell == labell {
                 
