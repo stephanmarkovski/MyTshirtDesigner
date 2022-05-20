@@ -150,23 +150,21 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             self.labell.text = addedText
             
             let sum = Double(addedSize!)
-//            if selectedFont == fontChoices[0] {
-//
-//                labell.font = UIFont(name: "OLD SPORT 01 COLLEGE NCV", size: 50)
-//
-//                labell.text = "\(addedText!)"
-//            }
+
             
             if labell == labell {
                 
                 
-                    labell.font = UIFont(name: selectedFont, size: sum!)
+                labell.font = UIFont(name: selectedFont, size: sum ?? 60)
+                       
                 labell.textColor = colorValue
                 
                 labell.text = "\(addedText!)"
-                
+           
             }
-
+                
+            
+                                       
             })
         
         textAlert.view.addSubview(pickerViewFont)
@@ -304,7 +302,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         imagedesign.image = UIImage()
             labell.text = ""
             
-        }
+    }
     // template button
     @IBAction func TemplateButton(_ sender: Any) {
         
@@ -368,12 +366,16 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     var huskyFaces: [UIImage] = [#imageLiteral(resourceName: "FULL FACE brown_white"),#imageLiteral(resourceName: "FULL FACE dark background"),#imageLiteral(resourceName: "FULL FACE light background"),#imageLiteral(resourceName: "FULL FACE orange"),#imageLiteral(resourceName: "FULL FACE white")]
     let huskyFaceSizes: [CGSize] = [CGSize(width: 100, height: 100),CGSize(width: 100, height: 100),CGSize(width: 100, height: 100),CGSize(width: 100, height: 100),CGSize(width: 100, height: 100)]
-    let herseyHs: [UIImage] = [#imageLiteral(resourceName: "JUST THE H"),#imageLiteral(resourceName: "JUST THE H2"),#imageLiteral(resourceName: "H DOG"),#imageLiteral(resourceName: "LOCKUP")]
+    let herseyHs: [UIImage] = [#imageLiteral(resourceName: "JUST THE H.png"),#imageLiteral(resourceName: "JUST THE H2.png"),#imageLiteral(resourceName: "LOCKUP.png")]
     let herseyHSizes: [CGSize] = [CGSize(width: 100, height: 100),CGSize(width: 100, height: 100),CGSize(width: 100, height: 100),CGSize(width: 100, height: 100)]
     let herseyLogo: [UIImage] = [#imageLiteral(resourceName: "PRIMARY LOGO dark background"),#imageLiteral(resourceName: "PRIMARY LOGO light background"),#imageLiteral(resourceName: "SECONDARY LOGO 1 light background"),#imageLiteral(resourceName: "SECONDARY LOGO 2 dark background"),#imageLiteral(resourceName: "SECONDARY LOGO 2 light background"),#imageLiteral(resourceName: "SECONDARY LOGO 2 WHITE"),#imageLiteral(resourceName: "SECONDARY LOGO 2a dark background")]
     let herseyLogoSizes: [CGSize] = [CGSize(width: 144, height: 100),CGSize(width: 144, height: 100),CGSize(width: 144, height: 100),CGSize(width: 175, height: 100),CGSize(width: 175, height: 100),CGSize(width: 175, height: 100),CGSize(width: 175, height: 100)]
     let herseyStripes: [UIImage] = [#imageLiteral(resourceName: "stripes face"),#imageLiteral(resourceName: "STRIPES H"),#imageLiteral(resourceName: "STRIPES")]
     let herseyStripeSizes: [CGSize] = [CGSize(width: 180, height: 75),CGSize(width: 180, height: 75),CGSize(width: 180, height: 75)]
+    let HDOG: [UIImage] = [#imageLiteral(resourceName: "HDOG")]
+    let HDOGSizes: [CGSize] = [CGSize(width: 180, height: 75),CGSize(width: 180, height: 75),CGSize(width: 180, height: 75)]
+    let Hersey_andhusky: [UIImage] = [#imageLiteral(resourceName: "Hersey_andhuskie")]
+    let Hersey_andhuskySizes: [CGSize] = [CGSize(width: 180, height: 75),CGSize(width: 180, height: 75),CGSize(width: 180, height: 75)]
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #### Number of Sections in CollectionView #### //
         return 1
@@ -396,13 +398,17 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                 return herseyLogo.count
             case 3:
                 return herseyStripes.count
+           case 4:
+                return HDOG.count
+           case 5:
+                return Hersey_andhusky.count 
             default:
                 break
             }
             
         }
        
-        return 0
+        return 1
     }
     // collection view cellsforitem
     func collectionView(_ selectedCollectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
