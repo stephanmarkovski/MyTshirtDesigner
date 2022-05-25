@@ -99,15 +99,20 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     @IBAction func dragGestureRecognizer( gestureRecognizer: UIPanGestureRecognizer) {
         labell.center = gestureRecognizer.location(in: view)
         labell.translatesAutoresizingMaskIntoConstraints = false
+        
         switch gestureRecognizer.state {
            case .began:
                initialCenter = labell.center
 
            case .changed:
+            
                let translation = gestureRecognizer.translation(in: view)
-
+            
                labell.center = CGPoint(x: initialCenter.x + translation.x,
                                              y: initialCenter.y + translation.y)
+
+
+
            default:
                break
            }
