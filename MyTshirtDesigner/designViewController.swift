@@ -300,8 +300,13 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         @IBAction func editbutton(_ sender: UIBarButtonItem) {
         imagedesign.image = UIImage()
             labell.text = ""
+            let image = UIImage()
             
-    }
+           
+            
+            
+            
+        }
     // template button
     @IBAction func TemplateButton(_ sender: Any) {
         
@@ -444,14 +449,16 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         let imageView = ImageFile(image: image, From: self, frame: location, collectionViewSize: collectionView.frame)
         
         self.view.addSubview(imageView)
+    
         
     }
     
     // collectionview selected items
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+         
         createImage((currentData[indexPath.row]), CGRect(x: 300, y: 200, width: currentSizes[indexPath.row].width, height: currentSizes[indexPath.row].height))
-      
+       
+          
         
         //next add methods to make image movable in app
     }
