@@ -64,7 +64,7 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="53"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="vYo-eH-iCn" kind="show" id="XVD-Wb-4bJ"/>
+                                    <segue destination="vYo-eH-iCn" kind="show" id="PDG-h1-Dt5"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome To:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLv-kX-0lY">
@@ -124,10 +124,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="saveButtonAction:" destination="IoV-xp-8en" eventType="touchUpInside" id="yAK-Yk-Beu"/>
-                                    <segue destination="vYo-eH-iCn" kind="show" id="9bL-8o-tNh">
-                                        <segue key="commit" inheritsFrom="parent" id="8uF-bA-Bvh"/>
-                                        <segue key="preview" inheritsFrom="commit" id="id4-Mk-BNN"/>
-                                    </segue>
+                                    <segue destination="vYo-eH-iCn" kind="show" id="2UX-SJ-Y1I"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Fw-iI-wG8">
@@ -428,7 +425,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9bL-8o-tNh"/>
+        <segue reference="2UX-SJ-Y1I"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemOrangeColor"/>
     <resources>
