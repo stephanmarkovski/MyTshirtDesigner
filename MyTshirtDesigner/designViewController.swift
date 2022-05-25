@@ -22,7 +22,7 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     var selectedImageView: UIImageView?
 
     var image: UIImage = UIImage()
-
+    
     var lastLocation = CGPoint(x: 0, y: 0)
     var lastRotation: CGFloat = 0.000001
     var lastScale:CGFloat = 0
@@ -109,8 +109,9 @@ class designViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
 
                labell.center = CGPoint(x: initialCenter.x + translation.x,
                                              y: initialCenter.y + translation.y)
+            
            default:
-               break
+            break
            }
     }
     //Alert for font
